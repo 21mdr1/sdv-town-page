@@ -46,3 +46,11 @@
 @mixin label-mobile {
     @include typography(700, 10px, 20px);
 }
+
+// backgrounds:
+
+@mixin background-image($image) {
+    background-image: url($image);
+    background-size: cover;
+    background-position: center;
+}

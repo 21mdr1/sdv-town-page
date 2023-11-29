@@ -30,7 +30,6 @@ ul {
 // Nav
 
 .nav {
-    // background is bandsite black
     // no larger than 20px high and 120px wide, ever
     background-color: $bandsite-black;
     
@@ -60,9 +59,28 @@ ul {
         }
 
         &:active, &--active {
-            color: $white;
+            @extend :hover;
             font-weight: 600; 
-            border-bottom: 2px solid $white;
         }
+    }
+}
+
+//hero
+.hero {
+    // what should I use...
+    height: 11.5rem;
+
+    &__overlay {
+        background: $bandsite-black-transparent;
+        height: 100%;
+        padding: 0 $mobile-padding;
+        display: flex;
+        align-items: center;
+    }
+
+    &__title {
+        @include header-mobile;
+        font-weight: 600;
+        color: $white;
     }
 }
