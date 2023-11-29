@@ -2,6 +2,12 @@
 @use "./mixins" as *;
 @use "./fonts";
 
+//temp 
+img {
+    width: 100%;
+}
+
+
 // Defaults
 
 body {
@@ -19,4 +25,44 @@ a {
 
 ul {
     list-style: none;
+}
+
+// Nav
+
+.nav {
+    // background is bandsite black
+    // no larger than 20px high and 120px wide, ever
+    background-color: $bandsite-black;
+    
+    &__logo {
+        @include header-mobile;
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 0.5rem;
+    }
+
+    &__links {
+        display: flex;
+    }
+
+    &__link {
+        // min width of line is 1 grid unit and max width is width of text 
+        @include subheader-mobile;
+        color: $mercury;
+        text-align: center;
+        flex-grow: 1;
+        padding-bottom: 0.5rem;
+
+        &:hover {
+            color: $white;
+            border-bottom: 2px solid $white;
+        }
+
+        &:active, &--active {
+            color: $white;
+            font-weight: 600; 
+            border-bottom: 2px solid $white;
+        }
+    }
 }

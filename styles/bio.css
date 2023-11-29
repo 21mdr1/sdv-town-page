@@ -13,6 +13,10 @@
   src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("otf"), url("../../assets/Font/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
+img {
+  width: 100%;
+}
+
 body {
   font-family: "Avenir Next", Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -28,4 +32,38 @@ a {
 
 ul {
   list-style: none;
+}
+
+.nav {
+  background-color: #323232;
+}
+.nav__logo {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+.nav__links {
+  display: flex;
+}
+.nav__link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #E1E1E1;
+  text-align: center;
+  flex-grow: 1;
+  padding-bottom: 0.5rem;
+}
+.nav__link:hover {
+  color: #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+}
+.nav__link:active, .nav__link--active {
+  color: #FFFFFF;
+  font-weight: 600;
+  border-bottom: 2px solid #FFFFFF;
 }/*# sourceMappingURL=bio.css.map */

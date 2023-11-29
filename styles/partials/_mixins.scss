@@ -18,7 +18,8 @@
 }
 
 @mixin header-mobile {
-    @include typography(700, 24px, 32px);
+    // @include typography(700, 24px, 32px);
+    @include typography(400, 24px, 32px);
 }
 
 @mixin subheader-tablet {
@@ -26,7 +27,8 @@
 }
 
 @mixin subheader-mobile {
-    @include typography(600, 14px, 22px);
+    // @include typography(600, 14px, 22px);
+    @include typography(400, 14px, 22px);
 }
 
 @mixin copy-tablet {

@@ -1,8 +1,20 @@
 // Colors
-$primary-dark: #323232; // BandSite-Black
-$primary-medium: #AFAFAF; // Silver
-$primary-light: #FFFFFF; // White
+$bandsite-black: #323232;
+$silver: #AFAFAF;
+$white: #FFFFFF;
 
-$secondary-dark: #000000; //BandSite-DarkBlack
-$secondary-medium: #E1E1E1; // Mercury
-$secondary-light: #FAFAFA; //Alabaster
+$bandsite-darkblack: #000000;
+$mercury: #E1E1E1;
+$alabaster: #FAFAFA;
+
+// mobile
+$mobile-padding: 1rem;
+$mobile-headline-padding: 1.5rem;
+
+// tablet/desktop
+$tablet-padding: 2.25rem;
+$tablet-headline-padding: 3rem;
+
+//sizes
+$logo-max-width: 7.5rem;
+$logo-max-height: 1.25rem;
