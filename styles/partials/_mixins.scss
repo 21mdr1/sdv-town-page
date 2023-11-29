@@ -1,0 +1,46 @@
+@use "./variables" as *;
+@use "./fonts";
+
+@mixin typography ($weight, $size, $height) {
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}
+
+// Defaults
+
+@mixin page-header-tablet {
+    @include typography(700, 60px, 68px);
+}
+
+@mixin section-header-tablet {
+    @include typography(700, 36px, 44px);
+}
+
+@mixin header-mobile {
+    @include typography(700, 24px, 32px);
+}
+
+@mixin subheader-tablet {
+    @include typography(600, 24px, 32px);
+}
+
+@mixin subheader-mobile {
+    @include typography(600, 14px, 22px);
+}
+
+@mixin copy-tablet {
+    @include typography(400, 14px, 20px);
+}
+
+@mixin copy-mobile {
+    @include typography(400, 13px, 18px);
+}
+
+@mixin label-tablet {
+    @include typography(700, 12px, 20px);
+}
+
+@mixin label-mobile {
+    @include typography(700, 10px, 20px);
+}

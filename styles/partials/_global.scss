@@ -1,0 +1,22 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./fonts";
+
+// Defaults
+
+body {
+    font-family: 'Avenir Next', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
