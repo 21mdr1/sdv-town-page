@@ -6,3 +6,48 @@
 .hero {
     @include background-image("../../assets/Images/hero-bio.jpg");
 }
+
+// About
+
+.about {
+    padding: 0 $mobile-padding;
+
+    &__title {
+        @include header-mobile;
+        font-weight: 600;
+        padding-top: $mobile-headline-padding;
+        padding-bottom: $mobile-padding;
+    }
+
+    &__image {
+        // what should I use...
+        height: 148px;
+    }
+
+    &__quote {
+        @include subheader-mobile;
+        font-weight: 600;
+    }
+
+    &__credit {
+        @extend .about__quote;
+        padding-top: 0.25rem;
+    }
+}
+
+// Bees Knees
+.bees-knees {
+    padding: 0 $mobile-padding;
+    padding-bottom: $mobile-padding;
+
+    &__title {
+        @include subheader-mobile;
+        font-weight: 600;
+        padding-top: $mobile-headline-padding;
+    }
+
+    &__content {
+        @include copy-mobile;
+        padding-top: $mobile-padding;
+    }
+}

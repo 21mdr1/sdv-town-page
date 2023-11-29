@@ -88,4 +88,46 @@ ul {
   background-image: url("../../assets/Images/hero-bio.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.about {
+  padding: 0 1rem;
+}
+.about__title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+.about__image {
+  height: 148px;
+}
+.about__quote, .about__credit {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+.about__credit {
+  padding-top: 0.25rem;
+}
+
+.bees-knees {
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+}
+.bees-knees__title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  padding-top: 1.5rem;
+}
+.bees-knees__content {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  padding-top: 1rem;
 }/*# sourceMappingURL=bio.css.map */
