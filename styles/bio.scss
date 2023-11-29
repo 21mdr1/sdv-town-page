@@ -16,12 +16,12 @@
         @include header-mobile;
         font-weight: 600;
         padding-top: $mobile-headline-padding;
-        padding-bottom: $mobile-padding;
     }
 
     &__image {
         // what should I use...
         height: 148px;
+        padding: 0.5rem 0;
     }
 
     &__quote {
@@ -50,4 +50,31 @@
         @include copy-mobile;
         padding-top: $mobile-padding;
     }
+}
+
+// Gallery
+.gallery {
+    background-color: $alabaster;
+    padding: 0 $mobile-padding;
+
+    &__title {
+        @include header-mobile;
+        font-weight: 600;
+        padding-top: $mobile-headline-padding;
+    }
+
+    &__image-container {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: $mobile-padding;
+        padding-top: 0.5rem;
+        padding-bottom: $mobile-padding;
+    }
+
+    &__image {
+        // display: block;
+        // margin: 1rem 0;
+        // margin-bottom: 1rem;
+    }
+
 }
