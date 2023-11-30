@@ -2,12 +2,6 @@
 @use "./mixins" as *;
 @use "./fonts";
 
-//temp 
-img {
-    width: 100%;
-}
-
-
 // Defaults
 
 body {
@@ -27,6 +21,12 @@ ul {
     list-style: none;
 }
 
+.logo {
+    @include header-mobile;
+    color: $white;
+    text-transform: uppercase;
+}
+
 // Nav
 
 .nav {
@@ -34,9 +34,7 @@ ul {
     background-color: $bandsite-black;
     
     &__logo {
-        @include header-mobile;
-        color: $white;
-        text-transform: uppercase;
+        
         text-align: center;
         padding-top: 0.5rem;
     }
@@ -84,3 +82,52 @@ ul {
         color: $white;
     }
 }
+
+//footer
+
+.footer {
+    background-color: $bandsite-black;
+    color: $white;
+    padding: $mobile-padding;
+
+    &__title {
+        @include header-mobile;
+        font-weight: 600;
+        padding-top: 0.5rem;
+    }
+
+    &__container {
+        display: flex;
+        column-gap: 2rem;
+        padding: $mobile-padding 0;
+    }
+
+    &__logo {
+        padding-top: 2rem;
+    }
+
+    &__copyright {
+        padding-top: 0.75rem;
+        @include label-mobile;
+        font-weight: 400;
+    }
+}
+
+.contact {
+    padding-bottom: $mobile-headline-padding;
+
+    &__title {
+        @include subheader-mobile;
+        font-weight: 600;
+    }
+
+    &__location {
+        @include copy-mobile;
+        padding: $mobile-padding 0;
+    }
+
+    &__email {
+        @include copy-mobile;
+        color: $white;
+    }
+}   
