@@ -9,42 +9,42 @@
 
 // Defaults
 
+// Tablet/Desktop
 @mixin page-header-tablet {
-    @include typography(700, 60px, 68px);
+    @include typography(600, 60px, 68px);
 }
 
 @mixin section-header-tablet {
     @include typography(700, 36px, 44px);
 }
 
-@mixin header-mobile {
-    // @include typography(700, 24px, 32px);
-    @include typography(400, 24px, 32px);
-}
-
 @mixin subheader-tablet {
     @include typography(600, 24px, 32px);
-}
-
-@mixin subheader-mobile {
-    // @include typography(600, 14px, 22px);
-    @include typography(400, 14px, 22px);
 }
 
 @mixin copy-tablet {
     @include typography(400, 14px, 20px);
 }
 
-@mixin copy-mobile {
-    @include typography(400, 13px, 18px);
-}
-
 @mixin label-tablet {
     @include typography(700, 12px, 20px);
 }
 
+// Mobile
+@mixin header-mobile {
+    @include typography(600, 24px, 32px);
+}
+
+@mixin subheader-mobile {
+    @include typography(600, 14px, 22px);
+}
+
+@mixin copy-mobile {
+    @include typography(400, 13px, 18px);
+}
+
 @mixin label-mobile {
-    @include typography(700, 10px, 20px);
+    @include typography(600, 10px, 20px);
 }
 
 // backgrounds:
@@ -53,4 +53,31 @@
     background-image: url($image);
     background-size: cover;
     background-position: center;
+}
+
+// Flex pre-sets
+
+@mixin center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin spaced-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// devices
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
 }

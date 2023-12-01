@@ -23,6 +23,7 @@ ul {
 
 .logo {
     @include header-mobile;
+    font-weight: 400;
     color: $white;
     text-transform: uppercase;
 }
@@ -30,30 +31,49 @@ ul {
 // Nav
 
 .nav {
-    // no larger than 20px high and 120px wide, ever
     background-color: $bandsite-black;
+
+    @include tablet {
+        display: flex;
+        padding: 0 $tablet-out-padding;
+    }
     
     &__logo {
-        
         text-align: center;
         padding-top: 0.5rem;
+        
+        @include tablet {
+            padding: 1.30rem 3rem 1rem 0;
+        }
     }
 
     &__links {
         display: flex;
+        align-items: center;
     }
 
     &__link {
-        // min width of line is 1 grid unit and max width is width of text 
         @include subheader-mobile;
+        font-weight: 400;
         color: $mercury;
         text-align: center;
         width: 50%;
         padding-bottom: 0.5rem;
 
+        @include tablet {
+            margin: 1.5rem $tablet-in-padding 0;
+            margin-bottom: 0;
+            padding-bottom: 1.30rem;
+            width: auto;
+        }
+
         &:hover {
             color: $white;
             border-bottom: 2px solid $white;
+            
+            @include tablet {
+                border-bottom: 3px solid $white;
+            }
         }
 
         &:active, &--active {
@@ -61,12 +81,12 @@ ul {
             font-weight: 600; 
         }
     }
+
 }
 
 //hero
 .hero {
-    // what should I use...
-    height: 11.5rem;
+    height: 57.5vw;
 
     &__overlay {
         background: $bandsite-black-transparent;
@@ -74,12 +94,19 @@ ul {
         padding: 0 $mobile-padding;
         display: flex;
         align-items: center;
+
+        @include tablet {
+            padding: 0 $tablet-out-padding;
+        }
     }
 
     &__title {
         @include header-mobile;
-        font-weight: 600;
         color: $white;
+
+        @include tablet {
+            @include page-header-tablet;
+        }
     }
 }
 
@@ -92,7 +119,6 @@ ul {
 
     &__title {
         @include header-mobile;
-        font-weight: 600;
         padding-top: 0.5rem;
     }
 
@@ -118,7 +144,6 @@ ul {
 
     &__title {
         @include subheader-mobile;
-        font-weight: 600;
     }
 
     &__location {
