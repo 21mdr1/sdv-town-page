@@ -116,26 +116,90 @@ ul {
     background-color: $bandsite-black;
     color: $white;
     padding: $mobile-padding;
+    padding-top: $mobile-headline-padding;
+
+    @include tablet {
+        padding: $tablet-out-padding;
+        padding-top: $tablet-headline-padding;
+    }
+
+    &__middle {
+        @include tablet {
+            display: flex;
+            column-gap: calc(2*$tablet-in-padding);
+        }
+    }
+
+    &__top {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: $tablet-out-padding;
+        }
+    }
+
+    &__top-right {
+        @include tablet {
+            display: flex;
+            column-gap: calc(2*$tablet-in-padding);
+        }
+    }
 
     &__title {
         @include header-mobile;
-        padding-top: 0.5rem;
+
+        @include tablet {
+            @include section-header-tablet;
+        }
     }
 
-    &__container {
+    &__socials-container {
         display: flex;
         column-gap: 2rem;
         padding: $mobile-padding 0;
+
+        @include tablet {
+            padding-top: 0;
+            padding-bottom: 0.4rem;
+            align-items: flex-end;
+        }
+    }
+
+    &__image {
+        @include tablet {
+            height: 1.5rem;
+        }
     }
 
     &__logo {
         padding-top: 2rem;
+
+        &--top {
+            display: none;
+
+            @include tablet {
+                display: block;
+                padding-top: 0.4rem;
+            }
+        }
+
+        &--bottom {
+            @include tablet {
+                display: none;
+                align-self: center;
+            }
+        }
     }
 
     &__copyright {
         padding-top: 0.75rem;
         @include label-mobile;
         font-weight: 400;
+
+        @include tablet {
+            @include copy-tablet;
+            padding-top: $tablet-in-padding;
+        }
     }
 }
 
@@ -144,15 +208,30 @@ ul {
 
     &__title {
         @include subheader-mobile;
+        font-weight: 600;
+
+        @include tablet {
+            @include copy-tablet;
+            font-weight: 600;
+        }
     }
 
     &__location {
         @include copy-mobile;
         padding: $mobile-padding 0;
+
+        @include tablet {
+            @include copy-tablet;
+            padding: $tablet-in-padding 0;
+        }
     }
 
     &__email {
         @include copy-mobile;
         color: $white;
+
+        @include tablet {
+            @include copy-tablet;
+        }
     }
 }   

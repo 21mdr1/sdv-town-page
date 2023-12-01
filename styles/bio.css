@@ -125,21 +125,82 @@ ul {
   background-color: #323232;
   color: #FFFFFF;
   padding: 1rem;
+  padding-top: 1.5rem;
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 2.25rem;
+    padding-top: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__middle {
+    display: flex;
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__top-right {
+    display: flex;
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
 }
 .footer__title {
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
-  padding-top: 0.5rem;
 }
-.footer__container {
+@media (min-width: 768px) {
+  .footer__title {
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+.footer__socials-container {
   display: flex;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
   padding: 1rem 0;
 }
+@media (min-width: 768px) {
+  .footer__socials-container {
+    padding-top: 0;
+    padding-bottom: 0.4rem;
+    align-items: flex-end;
+  }
+}
+@media (min-width: 768px) {
+  .footer__image {
+    height: 1.5rem;
+  }
+}
 .footer__logo {
   padding-top: 2rem;
+}
+.footer__logo--top {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer__logo--top {
+    display: block;
+    padding-top: 0.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__logo--bottom {
+    display: none;
+    align-self: center;
+  }
 }
 .footer__copyright {
   padding-top: 0.75rem;
@@ -147,6 +208,14 @@ ul {
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: 400;
+}
+@media (min-width: 768px) {
+  .footer__copyright {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding-top: 1.5rem;
+  }
 }
 
 .contact {
@@ -156,6 +225,15 @@ ul {
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.275rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .contact__title {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+  }
 }
 .contact__location {
   font-weight: 400;
@@ -163,11 +241,26 @@ ul {
   line-height: 1.125rem;
   padding: 1rem 0;
 }
+@media (min-width: 768px) {
+  .contact__location {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 1.5rem 0;
+  }
+}
 .contact__email {
   font-weight: 400;
   font-size: 0.813rem;
   line-height: 1.125rem;
   color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .contact__email {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }
 
 .hero {
@@ -339,6 +432,6 @@ ul {
 }
 @media (min-width: 768px) {
   .gallery__image {
-    width: calc((100vw - 3rem - 4.5rem) / 3);
+    width: calc((100% - 3rem) / 3);
   }
 }/*# sourceMappingURL=bio.css.map */
