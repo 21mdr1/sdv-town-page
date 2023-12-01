@@ -96,7 +96,7 @@
         @include tablet {
             @include copy-tablet;
             // line-height: 1.40rem;
-            @include typography(400, 0.88rem, 1.43rem);
+            @include typography(400, 0.875rem, 1.43rem);
         }
     }
 }
@@ -106,21 +106,43 @@
     background-color: $alabaster;
     padding: 0 $mobile-padding;
 
+    @include tablet {
+        padding: 0 $tablet-out-padding;
+    }
+
     &__title {
+        color: $bandsite-black;
         @include header-mobile;
         padding-top: $mobile-headline-padding;
+
+        @include tablet {
+            @include section-header-tablet;
+            padding-top: $tablet-headline-padding;
+        }
     }
 
     &__image-container {
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
         row-gap: $mobile-padding;
         padding-top: 0.5rem;
         padding-bottom: $mobile-padding;
+
+        @include tablet {
+            column-gap: $tablet-in-padding;
+            row-gap: $tablet-in-padding;
+            padding-top: $tablet-in-padding;
+            padding-bottom: $tablet-out-padding;
+        }
     }
 
     &__image {
         width: 100%;
+
+        @include tablet {
+            width: calc((100vw - 2*$tablet-in-padding - 2*$tablet-out-padding)/3);
+        }
     }
 
 }

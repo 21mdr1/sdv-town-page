@@ -288,7 +288,7 @@ ul {
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 400;
-    font-size: 0.88rem;
+    font-size: 0.875rem;
     line-height: 1.43rem;
   }
 }
@@ -297,19 +297,48 @@ ul {
   background-color: #FAFAFA;
   padding: 0 1rem;
 }
+@media (min-width: 768px) {
+  .gallery {
+    padding: 0 2.25rem;
+  }
+}
 .gallery__title {
+  color: #323232;
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
   padding-top: 1.5rem;
 }
+@media (min-width: 768px) {
+  .gallery__title {
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding-top: 3rem;
+  }
+}
 .gallery__image-container {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
 }
+@media (min-width: 768px) {
+  .gallery__image-container {
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.25rem;
+  }
+}
 .gallery__image {
   width: 100%;
+}
+@media (min-width: 768px) {
+  .gallery__image {
+    width: calc((100vw - 3rem - 4.5rem) / 3);
+  }
 }/*# sourceMappingURL=bio.css.map */
