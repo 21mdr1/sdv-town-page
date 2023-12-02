@@ -26,15 +26,24 @@ ul {
 .nav {
     background-color: $bandsite-black;
 
-    @include tablet {
-        display: flex;
-        align-items: center;
-        padding: 0 $tablet-out-padding;
+    &__container {
+        @include tablet {
+            display: flex;
+            align-items: center;
+            padding: 0 $tablet-out-padding;
+        }
+
+        @include desktop {
+            width: $desktop-content-width;
+            padding: 0;
+            margin: auto;
+        }
     }
     
     &__logo {    
         @include tablet {
-            padding: 1.30rem 3rem 1rem 0;
+            padding-right: 3rem;
+            padding-top: 0.3rem;
         }
     }
 
@@ -89,6 +98,10 @@ ul {
         @include tablet {
             padding: 0 $tablet-out-padding;
         }
+
+        @include desktop {
+            padding: 0;
+        }
     }
 
     &__title {
@@ -97,6 +110,11 @@ ul {
 
         @include tablet {
             @include page-header-tablet;
+        }
+
+        @include desktop {
+            width: $desktop-content-width;
+            margin: auto;
         }
     }
 }
@@ -114,11 +132,9 @@ ul {
         padding-top: $tablet-headline-padding;
     }
 
-    &__middle {
-        @include tablet {
-            display: flex;
-            column-gap: calc(2*$tablet-in-padding);
-        }
+    @include desktop {
+        padding-right: 0;
+        padding-left: 0; 
     }
 
     &__top {
@@ -128,12 +144,36 @@ ul {
             justify-content: space-between;
             padding-bottom: $tablet-out-padding;
         }
+
+        @include desktop {
+            width: $desktop-content-width;
+            margin: auto;
+        }
     }
 
     &__top-right {
         @include tablet {
             display: flex;
             column-gap: 2rem;
+        }
+    }
+
+    &__middle {
+        @include tablet {
+            display: flex;
+            column-gap: calc(2*$tablet-in-padding);
+        }
+
+        @include desktop {
+            width: $desktop-content-width;
+            margin: auto;
+        }
+    }
+
+    &__bottom {
+        @include desktop {
+            width: $desktop-content-width;
+            margin: auto;
         }
     }
 

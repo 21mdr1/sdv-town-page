@@ -17,6 +17,12 @@
         padding: 0 $tablet-out-padding;
     }
 
+    @include desktop {
+        padding: 0;
+        width: $desktop-content-width;
+        margin: auto;
+    }
+
     &__title {
         @include header-mobile;
         padding-top: $mobile-headline-padding;
@@ -69,7 +75,15 @@
     padding-bottom: $mobile-padding;
 
     @include tablet {
-        padding: $tablet-in-padding 6rem; 
+        padding: $tablet-in-padding $tablet-out-padding;
+        // padding: $tablet-in-padding 6rem; 
+    }
+
+    @include desktop {
+        padding-right: 0;
+        padding-left: 0;
+        width: $desktop-content-width;
+        margin: auto;
     }
 
     &__title {
@@ -78,6 +92,8 @@
 
         @include tablet {
             @include subheader-tablet;
+            padding-right: 3.75rem;
+            padding-left: 3.75rem;
         }
     }
 
@@ -85,6 +101,7 @@
         @include tablet {
             display: flex;
             column-gap: 1.25rem;
+            padding: 0 3.75rem;
         }
     }
 
@@ -108,6 +125,10 @@
         padding: 0 $tablet-out-padding;
     }
 
+    @include desktop {
+        padding: 0;
+    }
+
     &__title {
         color: $bandsite-black;
         @include header-mobile;
@@ -116,6 +137,11 @@
         @include tablet {
             @include section-header-tablet;
             padding-top: $tablet-headline-padding;
+        }
+
+        @include desktop {
+            width: $desktop-content-width;
+            margin: auto;
         }
     }
 
@@ -132,6 +158,11 @@
             row-gap: $tablet-in-padding;
             padding-top: $tablet-in-padding;
             padding-bottom: $tablet-out-padding;
+        }
+
+        @include desktop {
+            width: $desktop-content-width;
+            margin: auto;
         }
     }
 
