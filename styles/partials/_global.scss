@@ -21,13 +21,6 @@ ul {
     list-style: none;
 }
 
-.logo {
-    @include header-mobile;
-    font-weight: 400;
-    color: $white;
-    text-transform: uppercase;
-}
-
 // Nav
 
 .nav {
@@ -35,13 +28,11 @@ ul {
 
     @include tablet {
         display: flex;
+        align-items: center;
         padding: 0 $tablet-out-padding;
     }
     
-    &__logo {
-        text-align: center;
-        padding-top: 0.5rem;
-        
+    &__logo {    
         @include tablet {
             padding: 1.30rem 3rem 1rem 0;
         }
@@ -133,6 +124,7 @@ ul {
     &__top {
         @include tablet {
             display: flex;
+            align-items: center;
             justify-content: space-between;
             padding-bottom: $tablet-out-padding;
         }
@@ -141,7 +133,7 @@ ul {
     &__top-right {
         @include tablet {
             display: flex;
-            column-gap: calc(2*$tablet-in-padding);
+            column-gap: 2rem;
         }
     }
 

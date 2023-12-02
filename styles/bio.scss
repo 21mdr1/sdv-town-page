@@ -70,7 +70,6 @@
 
     @include tablet {
         padding: $tablet-in-padding 6rem; 
-        // $tablet-out-padding;
     }
 
     &__title {
@@ -95,7 +94,6 @@
 
         @include tablet {
             @include copy-tablet;
-            // line-height: 1.40rem;
             @include typography(400, 0.875rem, 1.43rem);
         }
     }
@@ -141,7 +139,6 @@
         width: 100%;
 
         @include tablet {
-            // width: calc((100vw - 2*$tablet-in-padding - 2*$tablet-out-padding - 18px)/3);
             width: calc((100% - 2*$tablet-in-padding)/3);
         }
     }
