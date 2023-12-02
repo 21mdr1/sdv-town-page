@@ -334,7 +334,6 @@ ul {
 .about__image {
   box-sizing: border-box;
   width: 100%;
-  height: 54vw;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 0 100%;
@@ -344,7 +343,6 @@ ul {
 @media (min-width: 768px) {
   .about__image {
     padding: 1.5rem 3.75rem;
-    height: 47vw;
   }
 }
 .about__quote {
