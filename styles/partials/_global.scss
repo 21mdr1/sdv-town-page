@@ -16,8 +16,6 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-    // font-size: inherit;
-    // font-weight: inherit;
 }
 
 ul {
@@ -84,12 +82,15 @@ ul {
             }
         }
 
-        &:active, &--selected {
+        &--selected {
             @extend :hover;
             font-weight: 600; 
         }
     }
 
+    &__clickable:active {
+        font-weight: 600;
+    }
 }
 
 //hero
