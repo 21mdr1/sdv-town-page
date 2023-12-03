@@ -40,8 +40,13 @@ ul {
         }
     }
     
-    &__logo {    
+    &__logo {
+        display: block;
+        text-align: center;
+        padding: $mobile-padding 0;
+
         @include tablet {
+            padding: 0;
             padding-right: 3rem;
             padding-top: 0.3rem;
         }

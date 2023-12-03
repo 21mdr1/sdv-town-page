@@ -47,8 +47,14 @@ ul {
     margin: auto;
   }
 }
+.nav__logo {
+  display: block;
+  text-align: center;
+  padding: 1rem 0;
+}
 @media (min-width: 768px) {
   .nav__logo {
+    padding: 0;
     padding-right: 3rem;
     padding-top: 0.3rem;
   }
