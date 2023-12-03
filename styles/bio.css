@@ -24,6 +24,7 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 ul {
@@ -81,16 +82,16 @@ ul {
     width: auto;
   }
 }
-.nav__link:hover, .nav__link:active, .nav__link.nav__link--active {
+.nav__link:hover, .nav__link:active, .nav__link.nav__link--selected {
   color: #FFFFFF;
   border-bottom: 2px solid #FFFFFF;
 }
 @media (min-width: 768px) {
-  .nav__link:hover, .nav__link:active, .nav__link.nav__link--active {
+  .nav__link:hover, .nav__link:active, .nav__link.nav__link--selected {
     border-bottom: 3px solid #FFFFFF;
   }
 }
-.nav__link:active, .nav__link--active {
+.nav__link:active, .nav__link--selected {
   font-weight: 600;
 }
 
