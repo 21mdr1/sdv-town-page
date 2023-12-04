@@ -34,6 +34,21 @@ ul {
 .nav {
   background-color: #323232;
 }
+.nav__container {
+  margin: 0 1rem;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .nav__container {
+    margin: 0 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav__container {
+    width: 63.75rem;
+    margin: auto;
+  }
+}
 @media (min-width: 768px) {
   .nav__container {
     display: flex;
@@ -43,13 +58,6 @@ ul {
          column-gap: initial;
     row-gap: initial;
     flex-wrap: initial;
-    margin: 0 2.25rem;
-  }
-}
-@media (min-width: 1280px) {
-  .nav__container {
-    width: 63.75rem;
-    margin: auto;
   }
 }
 .nav__logo {

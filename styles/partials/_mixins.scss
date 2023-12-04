@@ -16,10 +16,8 @@
     flex-wrap: $flex-wrap;
 }
 
-@mixin margin($padding:0) {
+@mixin margin {
     margin: 0 $mobile-padding;
-    $padding-right: $padding;
-    $padding-left: $padding;
 
     @include tablet {
         margin: 0 $tablet-out-padding;

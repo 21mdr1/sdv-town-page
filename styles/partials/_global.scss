@@ -28,14 +28,11 @@ ul {
     background-color: $bandsite-black;
 
     &__container {
+        @include margin;
+        margin: 0;
+
         @include tablet {
             @include flex(flex-start, center);
-            margin: 0 $tablet-out-padding;
-        }
-
-        @include desktop {
-            width: $desktop-content-width;
-            margin: auto;
         }
     }
     
@@ -92,6 +89,7 @@ ul {
 }
 
 // Hero
+
 .hero {
     height: 57.5vw;
 
