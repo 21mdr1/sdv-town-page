@@ -35,6 +35,7 @@ ul {
 
         @include desktop {
             width: $desktop-content-width;
+            // padding: 0.5rem 0;
             margin: auto;
         }
     }
@@ -62,10 +63,13 @@ ul {
         padding-bottom: 0.5rem;
 
         @include tablet {
-            margin: 1.5rem $tablet-in-padding 0;
-            margin-bottom: 0;
-            padding-bottom: 1.30rem;
+            margin: 1.5rem $tablet-in-padding 0 $tablet-in-padding;
+            padding-bottom: 1.3rem;
             width: auto;
+        }
+
+        @include desktop {
+            padding: 0.5rem 0 1.8rem 0;
         }
 
         &:hover {
@@ -91,6 +95,10 @@ ul {
 // Hero
 .hero {
     height: 57.5vw;
+
+    @include desktop {
+        max-height: 38.5rem;
+    }
 
     &__overlay {
         background: $bandsite-black-transparent;
