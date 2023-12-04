@@ -119,24 +119,17 @@
 // Gallery
 .gallery {
     background-color: $alabaster;
-    padding: 0 $mobile-padding;
-
-    @include tablet {
-        padding: 0 $tablet-out-padding;
-    }
-
-    @include desktop {
-        padding: 0;
-    }
 
     &__title {
         color: $bandsite-black;
         @include header-mobile;
         padding-top: $mobile-headline-padding;
+        margin: 0 $mobile-padding;
 
         @include tablet {
             @include section-header-tablet;
             padding-top: $tablet-headline-padding;
+            margin: 0 $tablet-out-padding;
         }
 
         @include desktop {
@@ -147,13 +140,13 @@
 
     &__image-container {
         @include flex(space-between, center, $tablet-in-padding, $mobile-padding, wrap);
-        padding-top: 0.5rem;
-        padding-bottom: $mobile-padding;
+        padding: $mobile-padding 0 0.5rem 0;
+        margin: 0 $mobile-padding;
 
         @include tablet {
             row-gap: $tablet-in-padding;
-            padding-top: $tablet-in-padding;
-            padding-bottom: $tablet-out-padding;
+            padding: $tablet-in-padding 0 $tablet-out-padding 0;
+            margin:  0 $tablet-out-padding;
         }
 
         @include desktop {

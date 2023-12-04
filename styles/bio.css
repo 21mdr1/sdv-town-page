@@ -477,17 +477,6 @@ ul {
 
 .gallery {
   background-color: #FAFAFA;
-  padding: 0 1rem;
-}
-@media (min-width: 768px) {
-  .gallery {
-    padding: 0 2.25rem;
-  }
-}
-@media (min-width: 1280px) {
-  .gallery {
-    padding: 0;
-  }
 }
 .gallery__title {
   color: #323232;
@@ -495,6 +484,7 @@ ul {
   font-size: 1.5rem;
   line-height: 2rem;
   padding-top: 1.5rem;
+  margin: 0 1rem;
 }
 @media (min-width: 768px) {
   .gallery__title {
@@ -502,6 +492,7 @@ ul {
     font-size: 2.25rem;
     line-height: 2.75rem;
     padding-top: 3rem;
+    margin: 0 2.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -518,14 +509,14 @@ ul {
        column-gap: 1.5rem;
   row-gap: 1rem;
   flex-wrap: wrap;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0 0.5rem 0;
+  margin: 0 1rem;
 }
 @media (min-width: 768px) {
   .gallery__image-container {
     row-gap: 1.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 2.25rem;
+    padding: 1.5rem 0 2.25rem 0;
+    margin: 0 2.25rem;
   }
 }
 @media (min-width: 1280px) {
