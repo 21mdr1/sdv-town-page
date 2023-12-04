@@ -419,13 +419,13 @@ ul {
 
 .bees-knees {
   color: #323232;
-  padding: 0 1rem;
+  margin: 0 1rem;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .bees-knees {
-    padding: 1.5rem 0;
     margin: 0 2.25rem;
+    padding: 1.5rem 0;
   }
 }
 @media (min-width: 1280px) {
@@ -469,9 +469,6 @@ ul {
 }
 @media (min-width: 768px) {
   .bees-knees__content {
-    font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.43rem;
