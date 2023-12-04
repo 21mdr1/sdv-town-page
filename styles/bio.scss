@@ -55,7 +55,6 @@
         @include subheader-mobile;
 
         @include tablet {
-            @include subheader-tablet;
             @include typography(600, 1.4rem, 1.8rem);
             padding: 0 3.75rem;
         }

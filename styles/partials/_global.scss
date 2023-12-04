@@ -127,22 +127,18 @@ ul {
 .footer {
     background-color: $bandsite-black;
     color: $white;
-    padding: $mobile-padding;
-    padding-top: $mobile-headline-padding;
+    padding: $mobile-headline-padding 0 $mobile-padding;
 
     @include tablet {
-        padding: $tablet-out-padding;
-        padding-top: $tablet-headline-padding;
-    }
-
-    @include desktop {
-        padding-right: 0;
-        padding-left: 0; 
+        padding: $tablet-headline-padding 0 $tablet-out-padding;
     }
 
     &__top {
+        margin: 0 $mobile-padding;
+
         @include tablet {
             @include flex(space-between, center);
+            margin: 0 $tablet-out-padding;
             padding-bottom: $tablet-out-padding;
         }
 
@@ -159,8 +155,11 @@ ul {
     }
 
     &__middle {
+        margin: 0 $mobile-padding;
+
         @include tablet {
             @include flex(flex-start, center, calc(2*$tablet-in-padding));
+            margin: 0 $tablet-out-padding;
         }
 
         @include desktop {
@@ -170,6 +169,12 @@ ul {
     }
 
     &__bottom {
+        margin: 0 $mobile-padding;
+
+        @include tablet {
+            margin: 0 $tablet-out-padding;
+        }
+
         @include desktop {
             width: $desktop-content-width;
             margin: auto;

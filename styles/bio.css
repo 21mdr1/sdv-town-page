@@ -153,20 +153,15 @@ ul {
 .footer {
   background-color: #323232;
   color: #FFFFFF;
-  padding: 1rem;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0 1rem;
 }
 @media (min-width: 768px) {
   .footer {
-    padding: 2.25rem;
-    padding-top: 3rem;
+    padding: 3rem 0 2.25rem;
   }
 }
-@media (min-width: 1280px) {
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
+.footer__top {
+  margin: 0 1rem;
 }
 @media (min-width: 768px) {
   .footer__top {
@@ -177,6 +172,7 @@ ul {
          column-gap: initial;
     row-gap: initial;
     flex-wrap: initial;
+    margin: 0 2.25rem;
     padding-bottom: 2.25rem;
   }
 }
@@ -197,6 +193,9 @@ ul {
     flex-wrap: initial;
   }
 }
+.footer__middle {
+  margin: 0 1rem;
+}
 @media (min-width: 768px) {
   .footer__middle {
     display: flex;
@@ -206,12 +205,21 @@ ul {
          column-gap: 3rem;
     row-gap: initial;
     flex-wrap: initial;
+    margin: 0 2.25rem;
   }
 }
 @media (min-width: 1280px) {
   .footer__middle {
     width: 63.75rem;
     margin: auto;
+  }
+}
+.footer__bottom {
+  margin: 0 1rem;
+}
+@media (min-width: 768px) {
+  .footer__bottom {
+    margin: 0 2.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -393,9 +401,6 @@ ul {
 }
 @media (min-width: 768px) {
   .about__quote {
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 2rem;
     font-weight: 600;
     font-size: 1.4rem;
     line-height: 1.8rem;
