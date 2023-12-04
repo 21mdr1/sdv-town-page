@@ -3,7 +3,7 @@
 @use "./partials/fonts" as *;
 @use "./partials/global";
 
-// hero
+// Hero
 .hero {
     @include background-image("../../assets/Images/hero-bio.jpg");
 }
@@ -12,14 +12,13 @@
 
 .about {
     color: $bandsite-black;
-    padding: 0 $mobile-padding;
+    margin: 0 $mobile-padding;
 
     @include tablet {
-        padding: 0 $tablet-out-padding;
+        margin: 0 $tablet-out-padding;
     }
 
     @include desktop {
-        padding: 0;
         width: $desktop-content-width;
         margin: auto;
     }
@@ -37,18 +36,18 @@
     &__image {
         box-sizing: border-box;
         width: 100%;
-        // height: 54vw;
-        // object-fit: cover;
-        // object-position: 0 100%;
+        height: 54vw;
+        object-fit: cover;
+        object-position: 0 100%;
         padding: 0.5rem 0;
 
         @include tablet {
             padding: $tablet-in-padding 3.75rem;
-            // height: 47vw;
+            height: 47vw;
         }
 
         @include desktop {
-            // height: auto;
+            max-height: 33rem;
         }
     }
 
@@ -68,7 +67,7 @@
 
         @include tablet {
             @include typography(600, 1rem, 1.25rem);
-            padding: 0.75rem 3.75rem 0;
+            padding: 0.75rem 3.75rem 0 3.75rem;
         }
     }
 }
