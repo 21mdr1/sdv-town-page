@@ -156,6 +156,11 @@
 
     &__image {
         width: 100%;
+        filter: grayscale(100%);
+        
+        &:hover {
+            filter: none;
+        }
 
         @include tablet {
             width: calc((100% - 2*$tablet-in-padding)/3);

@@ -532,6 +532,10 @@ ul {
 }
 .gallery__image {
   width: 100%;
+  filter: grayscale(100%);
+}
+.gallery__image:hover {
+  filter: none;
 }
 @media (min-width: 768px) {
   .gallery__image {
