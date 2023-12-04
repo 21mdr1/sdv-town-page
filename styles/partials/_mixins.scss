@@ -1,54 +1,6 @@
 @use "./variables" as *;
 @use "./fonts";
 
-@mixin typography ($weight, $size, $height) {
-    font-weight: $weight;
-    font-size: $size;
-    line-height: $height;
-}
-
-// Defaults
-
-// Tablet/Desktop
-@mixin page-header-tablet {
-    @include typography(600, 3.75rem, 4.25rem);
-}
-
-@mixin section-header-tablet {
-    @include typography(600, 2.25rem, 2.75rem);
-}
-
-@mixin subheader-tablet {
-    @include typography(600, 1.5rem, 2rem);
-}
-
-@mixin copy-tablet {
-    @include typography(400, 0.875rem, 1.25rem);
-}
-
-@mixin label-tablet {
-    @include typography(700, 0.75rem, 1.25rem);
-}
-
-// Mobile
-@mixin header-mobile {
-    @include typography(600, 1.5rem, 2rem);
-}
-
-@mixin subheader-mobile {
-    @include typography(600, 0.875rem, 1.275rem);
-}
-
-@mixin copy-mobile {
-    @include typography(400, 0.813rem, 1.125rem);
-}
-
-@mixin label-mobile {
-    @include typography(600, 0.625rem, 1.25rem);
-}
-
-// backgrounds:
-
 @mixin background-image($image) {
     background-image: url($image);
     background-size: cover;
@@ -64,7 +16,6 @@
     flex-wrap: $flex-wrap;
 }
 
-// devices
 @mixin tablet {
     @media (min-width: $tablet) {
         @content;

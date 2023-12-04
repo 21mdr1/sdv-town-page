@@ -43,13 +43,12 @@ ul {
          column-gap: initial;
     row-gap: initial;
     flex-wrap: initial;
-    padding: 0 2.25rem;
+    margin: 0 2.25rem;
   }
 }
 @media (min-width: 1280px) {
   .nav__container {
     width: 63.75rem;
-    padding: 0;
     margin: auto;
   }
 }
@@ -60,9 +59,7 @@ ul {
 }
 @media (min-width: 768px) {
   .nav__logo {
-    padding: 0;
-    padding-right: 3rem;
-    padding-top: 0.3rem;
+    padding: 0.3rem 3rem 0 0;
   }
 }
 .nav__links {
@@ -114,7 +111,6 @@ ul {
 .hero__overlay {
   background: rgba(50, 50, 50, 0.5);
   height: 100%;
-  padding: 0 1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -123,27 +119,19 @@ ul {
   row-gap: initial;
   flex-wrap: initial;
 }
-@media (min-width: 768px) {
-  .hero__overlay {
-    padding: 0 2.25rem;
-  }
-}
-@media (min-width: 1280px) {
-  .hero__overlay {
-    padding: 0;
-  }
-}
 .hero__title {
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
   color: #FFFFFF;
+  margin: 0 1rem;
 }
 @media (min-width: 768px) {
   .hero__title {
     font-weight: 600;
     font-size: 3.75rem;
     line-height: 4.25rem;
+    margin: 0 2.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -296,7 +284,6 @@ ul {
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.275rem;
-  font-weight: 600;
 }
 @media (min-width: 768px) {
   .contact__title {

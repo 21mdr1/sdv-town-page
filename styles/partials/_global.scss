@@ -1,6 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
-@use "./fonts";
+@use "./fonts" as *;
 
 // Defaults
 
@@ -30,12 +30,11 @@ ul {
     &__container {
         @include tablet {
             @include flex(flex-start, center);
-            padding: 0 $tablet-out-padding;
+            margin: 0 $tablet-out-padding;
         }
 
         @include desktop {
             width: $desktop-content-width;
-            padding: 0;
             margin: auto;
         }
     }
@@ -46,9 +45,7 @@ ul {
         padding: $mobile-padding 0;
 
         @include tablet {
-            padding: 0;
-            padding-right: 3rem;
-            padding-top: 0.3rem;
+            padding: 0.3rem 3rem 0 0;
         }
     }
 
@@ -98,24 +95,17 @@ ul {
     &__overlay {
         background: $bandsite-black-transparent;
         height: 100%;
-        padding: 0 $mobile-padding;
         @include flex(flex-start, center);
-
-        @include tablet {
-            padding: 0 $tablet-out-padding;
-        }
-
-        @include desktop {
-            padding: 0;
-        }
     }
 
     &__title {
         @include header-mobile;
         color: $white;
+        margin: 0 $mobile-padding;
 
         @include tablet {
             @include page-header-tablet;
+            margin: 0 $tablet-out-padding;
         }
 
         @include desktop {
@@ -239,7 +229,6 @@ ul {
 
     &__title {
         @include subheader-mobile;
-        font-weight: 600;
 
         @include tablet {
             @include copy-tablet;
