@@ -37,8 +37,8 @@
         box-sizing: border-box;
         width: 100%;
         // height: 54vw;
-        object-fit: cover;
-        object-position: 0 100%;
+        // object-fit: cover;
+        // object-position: 0 100%;
         padding: 0.5rem 0;
 
         @include tablet {
@@ -79,13 +79,14 @@
     padding-bottom: $mobile-padding;
 
     @include tablet {
-        padding: $tablet-in-padding $tablet-out-padding;
-        // padding: $tablet-in-padding 6rem; 
+        // padding: $tablet-in-padding $tablet-out-padding;
+        padding: $tablet-in-padding 0;
+        margin: 0 $tablet-out-padding;
     }
 
     @include desktop {
-        padding-right: 0;
-        padding-left: 0;
+        // padding-right: 0;
+        // padding-left: 0;
         width: $desktop-content-width;
         margin: auto;
     }
@@ -103,8 +104,7 @@
 
     &__content-container {
         @include tablet {
-            display: flex;
-            column-gap: 1.25rem;
+            @include flex(flex-start, center, 1.25rem);
             padding: 0 3.75rem;
         }
     }
@@ -150,15 +150,11 @@
     }
 
     &__image-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        row-gap: $mobile-padding;
+        @include flex(space-between, center, $tablet-in-padding, $mobile-padding, wrap);
         padding-top: 0.5rem;
         padding-bottom: $mobile-padding;
 
         @include tablet {
-            column-gap: $tablet-in-padding;
             row-gap: $tablet-in-padding;
             padding-top: $tablet-in-padding;
             padding-bottom: $tablet-out-padding;

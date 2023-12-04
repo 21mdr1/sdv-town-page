@@ -55,18 +55,13 @@
     background-position: center;
 }
 
-// Flex pre-sets
-
-@mixin center-content {
+@mixin flex($justify-content: initial, $align-items: initial, $column-gap: initial, $row-gap: initial, $flex-wrap: initial) {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin spaced-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    column-gap: $column-gap;
+    row-gap: $row-gap;
+    flex-wrap: $flex-wrap;
 }
 
 // devices

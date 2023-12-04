@@ -29,8 +29,7 @@ ul {
 
     &__container {
         @include tablet {
-            display: flex;
-            align-items: center;
+            @include flex(flex-start, center);
             padding: 0 $tablet-out-padding;
         }
 
@@ -54,8 +53,7 @@ ul {
     }
 
     &__links {
-        display: flex;
-        align-items: center;
+        @include flex(flex-start, center);
     }
 
     &__link {
@@ -101,8 +99,7 @@ ul {
         background: $bandsite-black-transparent;
         height: 100%;
         padding: 0 $mobile-padding;
-        display: flex;
-        align-items: center;
+        @include flex(flex-start, center);
 
         @include tablet {
             padding: 0 $tablet-out-padding;
@@ -148,9 +145,7 @@ ul {
 
     &__top {
         @include tablet {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include flex(space-between, center);
             padding-bottom: $tablet-out-padding;
         }
 
@@ -160,17 +155,15 @@ ul {
         }
     }
 
-    &__top-right {
+    &__top-left {
         @include tablet {
-            display: flex;
-            column-gap: 2rem;
+            @include flex(flex-start, center, 2rem);
         }
     }
 
     &__middle {
         @include tablet {
-            display: flex;
-            column-gap: calc(2*$tablet-in-padding);
+            @include flex(flex-start, center, calc(2*$tablet-in-padding));
         }
 
         @include desktop {
@@ -195,14 +188,12 @@ ul {
     }
 
     &__socials-container {
-        display: flex;
-        column-gap: 2rem;
+        @include flex(flex-start, flex-end, 2rem);
         padding: $mobile-padding 0;
 
         @include tablet {
             padding-top: 0;
             padding-bottom: 0.4rem;
-            align-items: flex-end;
         }
     }
 
@@ -227,7 +218,6 @@ ul {
         &--bottom {
             @include tablet {
                 display: none;
-                align-self: center;
             }
         }
     }
