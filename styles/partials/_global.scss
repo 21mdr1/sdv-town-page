@@ -108,16 +108,10 @@ ul {
     &__title {
         @include header-mobile;
         color: $white;
-        margin: 0 $mobile-padding;
+        @include margin;
 
         @include tablet {
             @include page-header-tablet;
-            margin: 0 $tablet-out-padding;
-        }
-
-        @include desktop {
-            width: $desktop-content-width;
-            margin: auto;
         }
     }
 }
@@ -134,17 +128,11 @@ ul {
     }
 
     &__top {
-        margin: 0 $mobile-padding;
+        @include margin;
 
         @include tablet {
             @include flex(space-between, center);
-            margin: 0 $tablet-out-padding;
             padding-bottom: $tablet-out-padding;
-        }
-
-        @include desktop {
-            width: $desktop-content-width;
-            margin: auto;
         }
     }
 
@@ -155,30 +143,15 @@ ul {
     }
 
     &__middle {
-        margin: 0 $mobile-padding;
+        @include margin;
 
         @include tablet {
             @include flex(flex-start, center, calc(2*$tablet-in-padding));
-            margin: 0 $tablet-out-padding;
-        }
-
-        @include desktop {
-            width: $desktop-content-width;
-            margin: auto;
         }
     }
 
     &__bottom {
-        margin: 0 $mobile-padding;
-
-        @include tablet {
-            margin: 0 $tablet-out-padding;
-        }
-
-        @include desktop {
-            width: $desktop-content-width;
-            margin: auto;
-        }
+        @include margin;
     }
 
     &__title {

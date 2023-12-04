@@ -12,16 +12,7 @@
 
 .about {
     color: $bandsite-black;
-    margin: 0 $mobile-padding;
-
-    @include tablet {
-        margin: 0 $tablet-out-padding;
-    }
-
-    @include desktop {
-        width: $desktop-content-width;
-        margin: auto;
-    }
+    @include margin;
 
     &__title {
         @include header-mobile;
@@ -74,17 +65,11 @@
 // Bees Knees
 .bees-knees {
     color: $bandsite-black;
-    margin: 0 $mobile-padding;
     padding-bottom: $mobile-padding;
+    @include margin;
 
     @include tablet {
-        margin: 0 $tablet-out-padding;
         padding: $tablet-in-padding 0;
-    }
-
-    @include desktop {
-        width: $desktop-content-width;
-        margin: auto;
     }
 
     &__title {
@@ -123,34 +108,22 @@
         color: $bandsite-black;
         @include header-mobile;
         padding-top: $mobile-headline-padding;
-        margin: 0 $mobile-padding;
+        @include margin;
 
         @include tablet {
             @include section-header-tablet;
             padding-top: $tablet-headline-padding;
-            margin: 0 $tablet-out-padding;
-        }
-
-        @include desktop {
-            width: $desktop-content-width;
-            margin: auto;
         }
     }
 
     &__image-container {
         @include flex(space-between, center, $tablet-in-padding, $mobile-padding, wrap);
-        padding: $mobile-padding 0 0.5rem 0;
-        margin: 0 $mobile-padding;
+        padding: $mobile-padding 0;
+        @include margin;
 
         @include tablet {
             row-gap: $tablet-in-padding;
             padding: $tablet-in-padding 0 $tablet-out-padding 0;
-            margin:  0 $tablet-out-padding;
-        }
-
-        @include desktop {
-            width: $desktop-content-width;
-            margin: auto;
         }
     }
 

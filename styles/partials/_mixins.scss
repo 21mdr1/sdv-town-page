@@ -16,6 +16,21 @@
     flex-wrap: $flex-wrap;
 }
 
+@mixin margin($padding:0) {
+    margin: 0 $mobile-padding;
+    $padding-right: $padding;
+    $padding-left: $padding;
+
+    @include tablet {
+        margin: 0 $tablet-out-padding;
+    }
+
+    @include desktop {
+        width: $desktop-content-width;
+        margin: auto;
+    }
+}
+
 @mixin tablet {
     @media (min-width: $tablet) {
         @content;
