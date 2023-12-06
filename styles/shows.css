@@ -342,7 +342,11 @@ ul {
   background-image: url("../../assets/Images/hero-shows.jpg");
   background-size: cover;
   background-position: center;
-  height: 40rem;
+}
+@media (min-width: 1280px) {
+  .hero {
+    height: 40rem;
+  }
 }
 .hero__content {
   width: 100%;
