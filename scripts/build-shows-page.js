@@ -30,7 +30,12 @@ const createShow = function(showInfo) {
         tempInfo = {tag: "h4", classes: ["show__label"], content: label};
         createAndAppendElement(container,  tempInfo);
 
-        tempInfo = {tag: "p", classes: ["show__content"], content: showInfo[label]};
+        let contentClasses = ["show__content"];
+        if(label === "date") {
+            contentClasses.push("show__content--bold");
+        }
+
+        tempInfo = {tag: "p", classes: contentClasses, content: showInfo[label]};
         createAndAppendElement(container,  tempInfo);
     }
 
