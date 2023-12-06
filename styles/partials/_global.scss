@@ -39,7 +39,7 @@ ul {
     &__logo {
         display: block;
         text-align: center;
-        padding: $mobile-padding 0;
+        padding: 0.7rem 0;
 
         @include tablet {
             padding: 0.3rem 3rem 0 0;
@@ -91,11 +91,6 @@ ul {
 // Hero
 
 .hero {
-    height: 57.5vw;
-
-    @include desktop {
-        max-height: 38.5rem;
-    }
 
     &__overlay {
         background: $bandsite-black-transparent;
@@ -106,7 +101,6 @@ ul {
     &__title {
         @include header-mobile;
         color: $white;
-        @include margin;
 
         @include tablet {
             @include page-header-tablet;

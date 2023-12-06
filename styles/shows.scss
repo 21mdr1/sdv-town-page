@@ -1,0 +1,66 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./partials/fonts" as *;
+@use "./partials/global";
+
+// Hero
+.hero {
+    @include background-image("../../assets/Images/hero-shows.jpg");
+    height: 40rem;
+
+    &__content {
+        width: 100%;
+        @include margin;
+        padding-top: 2rem;
+        padding-bottom: $mobile-headline-padding;
+
+        @include tablet {
+            padding-top: 4rem;
+            padding-bottom: 3.6rem;
+        }
+
+        @include desktop {
+            @include flex(center, center);
+        }
+    }
+
+    &__over-title {
+        @include subheader-mobile;
+        color: $white;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+
+        @include tablet {
+            @include subheader-tablet;
+        }
+    }
+
+    &__title {
+        padding-top: $mobile-padding;
+        padding-bottom: $mobile-padding;
+        width: 75%;
+
+        @include tablet {
+            padding-bottom: 2.7rem;
+        }
+
+        @include desktop {
+            width: 80%;
+        }
+    }
+
+    &__music {
+        width: 100%;
+        height: 6.3rem;
+
+        @include tablet {
+            width: 60%;
+            height: 9rem;
+        }
+
+        @include desktop {
+            width: 60%;
+            height: 8.5rem;
+        }
+    }
+}

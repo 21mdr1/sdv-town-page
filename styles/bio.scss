@@ -6,6 +6,15 @@
 // Hero
 .hero {
     @include background-image("../../assets/Images/hero-bio.jpg");
+    height: 57.5vw;
+
+    @include desktop {
+        max-height: 38.5rem;
+    }
+    
+    &__title {
+        @include margin;
+    }
 }
 
 // About
