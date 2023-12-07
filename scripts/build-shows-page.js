@@ -1,13 +1,13 @@
 // Functions, etc.
 let tempInfo;
 
-const createAndAppendElement = function(parent, elementInfo) {
+function createAndAppendElement(parent, elementInfo) {
     let element = newElement(elementInfo);
     parent.appendChild(element);
     return element
 }
 
-const newElement = function(elementInfo) {
+function newElement(elementInfo) {
     let element = document.createElement(elementInfo.tag);
     for(classItem of elementInfo.classes) {
         element.classList.add(classItem);
@@ -16,12 +16,12 @@ const newElement = function(elementInfo) {
     return element;
 }
 
-const appendShow = function(parent, showInfo) {
+function appendShow(parent, showInfo) {
     let show = createShow(showInfo);
     parent.appendChild(show);
 }
 
-const createShow = function(showInfo) {
+function createShow(showInfo) {
     let tempInfo;
     tempInfo = {tag: "div", classes: ["show"], content: ''};
     const container = newElement(tempInfo);  
