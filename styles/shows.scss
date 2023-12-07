@@ -70,26 +70,29 @@
 
 
 .shows {
+
     &__title {
         @include header-mobile;
-        padding: 2.1rem $mobile-padding 1.3rem;
+        padding: 2.1rem $mobile-padding 0.3rem;
     }
 
-    // &__container {
-
-    // }
+    &__container {
+        padding-bottom: $mobile-padding;
+    }
 }
 
 .show {
-    border-bottom: 3px solid $mercury;
+    border-bottom: 2px solid $mercury;
     padding: 0 $mobile-padding;
+    padding-top: $mobile-padding;
+    padding-bottom: 0.9rem;
 
     @include tablet {
         &:hover {
             background-color: $alabaster;
         }
 
-        &:active {
+        &:active, &:focus-within {
             background-color: $silver;
         }
     }
@@ -99,12 +102,14 @@
         color: $silver;
         text-transform: uppercase;
         letter-spacing: 1px;
+        padding-bottom: 0.3212rem;
     }
 
     &__content {
         @include copy-mobile;
         letter-spacing: 0.3px;
         color: $bandsite-black;
+        padding-bottom: 0.4rem;
 
         &--bold {
             font-weight: 600;
@@ -121,6 +126,8 @@
         height: 2.5rem;
         text-align: center;
         border-radius: 4px;
+
+        margin-top: 0.819rem;
 
         &:hover {
             background-color: $bandsite-darkblack;

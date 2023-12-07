@@ -9,9 +9,7 @@ function createAndAppendElement(parent, elementInfo) {
 
 function newElement(elementInfo) {
     let element = document.createElement(elementInfo.tag);
-    for(classItem of elementInfo.classes) {
-        element.classList.add(classItem);
-    }
+    elementInfo.classes.forEach((classItem) => {element.classList.add(classItem)})
     element.textContent = elementInfo.content;
     return element;
 }
@@ -64,6 +62,5 @@ let shows = [
     {date: 'Wed Dec 15 2021', venue: 'Press Club', location: 'San Francisco, CA'}
 ]
 
-for(show of shows) {
-    appendShow(showsContainer, show);
-}
+
+shows.forEach((show) => {appendShow(showsContainer, show)})

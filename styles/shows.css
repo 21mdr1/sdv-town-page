@@ -433,18 +433,23 @@ ul {
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
-  padding: 2.1rem 1rem 1.3rem;
+  padding: 2.1rem 1rem 0.3rem;
+}
+.shows__container {
+  padding-bottom: 1rem;
 }
 
 .show {
-  border-bottom: 3px solid #E1E1E1;
+  border-bottom: 2px solid #E1E1E1;
   padding: 0 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0.9rem;
 }
 @media (min-width: 768px) {
   .show:hover {
     background-color: #FAFAFA;
   }
-  .show:active {
+  .show:active, .show:focus-within {
     background-color: #AFAFAF;
   }
 }
@@ -455,6 +460,7 @@ ul {
   color: #AFAFAF;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding-bottom: 0.3212rem;
 }
 .show__content {
   font-weight: 400;
@@ -462,6 +468,7 @@ ul {
   line-height: 1.125rem;
   letter-spacing: 0.3px;
   color: #323232;
+  padding-bottom: 0.4rem;
 }
 .show__content--bold {
   font-weight: 600;
@@ -478,6 +485,7 @@ ul {
   height: 2.5rem;
   text-align: center;
   border-radius: 4px;
+  margin-top: 0.819rem;
 }
 .show__button:hover {
   background-color: #000000;
