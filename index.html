@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/bio.css" class="css">
+    <script src="./scripts/index-page.js" defer></script>
     <title>Band Site - Bio</title>
 </head>
 <body>
@@ -65,6 +66,27 @@
                 <img src="./assets/Images/Photo-gallery-8.jpg" alt="a closeup of a mixing board" class="gallery__image">
                 <img src="./assets/Images/Photo-gallery-9.jpg" alt="people dance as confetti falls" class="gallery__image">
             </div>
+        </section>
+
+        <!-- Comment Section -->
+        <section class="comment-section">
+            <h2 class="comment-section__title">Join the Conversation</h2>
+            <form class="comment-form">
+                <!-- <div class="form__img"></div> -->
+                <img class="form__img" src="./assets/Images/Mohan-muruge.jpg" alt="user photo">
+                <label for="form__name" class="form__label">
+                    name
+                    <input class="form__input" id="form__name" type="text" name="name" placeholder="Enter your name">
+                </label>
+                <label for="from__comment" class="form__label">
+                    comment
+                    <textarea class="form__input" id="from__comment" name="comment" placeholder="Add a new comment"></textarea>
+                    <!-- cols="30" rows="10" -->
+                    <!-- resize: none -->
+                </label>
+                <button class="form__button" type="subsmit">comment</button>
+            </form>
+            <div class="comments__container"></div>
         </section>
     </main>
 
