@@ -512,7 +512,7 @@ ul {
   .show:hover {
     background-color: #FAFAFA;
   }
-  .show:active, .show:focus-within {
+  .show--selected {
     background-color: #AFAFAF;
   }
 }

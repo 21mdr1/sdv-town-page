@@ -72,3 +72,23 @@ let shows = [
 
 
 shows.forEach((show) => {appendShow(showsContainer, show)})
+
+// Event handlers and listeners
+// check if this is the right way to do this
+// if so, how to override :hover behavior
+const showsList = document.querySelectorAll(".show");
+console.log(showsList)
+
+function showsClickHandler(event, listeningShow) {
+    showsList.forEach((showItem) => {
+        if (showItem.classList.contains('show--selected')) {
+            showItem.classList.remove('show--selected');
+        }
+    })
+    console.log(event);
+    listeningShow.classList.add('show--selected');
+}
+
+showsList.forEach((showItem) => {
+    showItem.addEventListener('click', (event) => {showsClickHandler(event, showItem)})
+})

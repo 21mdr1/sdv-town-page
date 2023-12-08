@@ -5,6 +5,8 @@
 
 // Hero
 .hero {
+    //rework heights for mobile and tablet
+
     @include background-image("../../assets/Images/hero-shows.jpg");
     
     @include desktop {
@@ -136,7 +138,7 @@
             background-color: $alabaster;
         }
 
-        &:active, &:focus-within {
+        &--selected {
             background-color: $silver;
         }
     }
