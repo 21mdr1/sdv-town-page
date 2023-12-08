@@ -138,10 +138,11 @@
             background-color: $alabaster;
         }
 
-        &--selected {
+        &--selected, &--selected:hover {
             background-color: $silver;
         }
     }
+
 
     &__label {
         @include label-mobile;

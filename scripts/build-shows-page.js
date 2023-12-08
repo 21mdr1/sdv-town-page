@@ -78,18 +78,45 @@ shows.forEach((show) => {appendShow(showsContainer, show)})
 // if so, how to override :hover behavior
 // maybe do on focus instead of click
 const showsList = document.querySelectorAll(".show");
-console.log(showsList)
+
+// function showsFocusHandler(event, listeningShow) {
+//     console.log("focus")
+//     listeningShow.classList.add('show--selected');
+// }
+
+// function showsBlurHandler(event, listeningShow) {
+//     console.log("blur")
+//     listeningShow.classList.remove('show--selected')
+// }
+
+// showsList.forEach((show)=>{
+//     show.addEventListener('focus', (event) => showsFocusHandler(event, show))
+// })
+
+// showsList.forEach((show)=>{
+//     show.addEventListener('blur', (event) => showsBlurHandler(event, show))
+// })
 
 function showsClickHandler(event, listeningShow) {
+    event.stopPropagation()
     showsList.forEach((showItem) => {
         if (showItem.classList.contains('show--selected')) {
             showItem.classList.remove('show--selected');
         }
     })
-    console.log(event);
     listeningShow.classList.add('show--selected');
+}
+
+function showsUnclickHandler(event) {
+    showsList.forEach((showItem) => {
+        if (showItem.classList.contains('show--selected')) {
+            showItem.classList.remove('show--selected');
+        }
+    })
 }
 
 showsList.forEach((showItem) => {
     showItem.addEventListener('click', (event) => {showsClickHandler(event, showItem)})
 })
+
+window.addEventListener('click', showsUnclickHandler)

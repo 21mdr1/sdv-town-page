@@ -512,7 +512,7 @@ ul {
   .show:hover {
     background-color: #FAFAFA;
   }
-  .show--selected {
+  .show--selected, .show--selected:hover {
     background-color: #AFAFAF;
   }
 }
