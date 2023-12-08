@@ -68,6 +68,15 @@
     }
 }
 
+.main {
+    // need to fix the rest so that I can use:
+    // @mixin margin
+    @include desktop {
+        width: $desktop-content-width;
+        margin: auto;
+        @include flex(flex-start, flex-start, 4.7rem);
+    }
+}
 
 .shows {
 
@@ -79,6 +88,12 @@
             @include section-header-tablet;
             padding: $tablet-headline-padding $tablet-out-padding $tablet-out-padding;
         }
+
+        @include desktop {
+            // will eventually be deleted
+            padding-left: 0;
+            pading-right: 0;
+        }
     }
 
     &__container {
@@ -87,6 +102,15 @@
         @include tablet {
             padding: 0 1.125rem;
             padding-bottom: $tablet-out-padding;
+        }
+
+        @include desktop {
+            flex-grow: 1;
+            //will eventually need to be changed:
+            padding-right: 0;
+            padding-left: 1.125rem;
+            // if I have the energy : the dividers go a bit further than the bandsite logo below
+            padding-top: $tablet-headline-padding;
         }
     }
 
@@ -129,6 +153,10 @@
             padding-bottom: 0;
         }
 
+        @include desktop {
+            @include label-tablet;
+        }
+
         &--header {
             display: none;
 
@@ -136,6 +164,10 @@
                 display: block;
                 padding-bottom: 0.2rem;
                 flex: 1 0 0;
+            }
+
+            @include desktop {
+                padding-bottom: $tablet-out-padding;
             }
         }
     }
