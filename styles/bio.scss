@@ -175,6 +175,12 @@
         @include tablet {
             padding-right: 3.75rem;
             padding-left: 3.75rem;
+            padding-bottom: $tablet-out-padding;
+        }
+
+        @include desktop {
+            padding-right: 16.1rem;
+            padding-left: 16.1rem;
         }
     }
 }
@@ -185,9 +191,12 @@
     padding-bottom: $mobile-padding;
     
     @include tablet {
-        margin-right: 3.75rem;
-        margin-left: 3.75rem;
+        margin: 0 3.75rem;
         border-bottom-width: 2px;
+    }
+
+    @include desktop {
+        margin: 0 16.1rem;
     }
 
     &__img {

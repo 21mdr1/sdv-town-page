@@ -613,6 +613,13 @@ ul {
   .comments__container {
     padding-right: 3.75rem;
     padding-left: 3.75rem;
+    padding-bottom: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments__container {
+    padding-right: 16.1rem;
+    padding-left: 16.1rem;
   }
 }
 
@@ -629,9 +636,13 @@ ul {
 }
 @media (min-width: 768px) {
   .form {
-    margin-right: 3.75rem;
-    margin-left: 3.75rem;
+    margin: 0 3.75rem;
     border-bottom-width: 2px;
+  }
+}
+@media (min-width: 1280px) {
+  .form {
+    margin: 0 16.1rem;
   }
 }
 .form__img {

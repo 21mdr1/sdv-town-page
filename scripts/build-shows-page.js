@@ -76,6 +76,7 @@ shows.forEach((show) => {appendShow(showsContainer, show)})
 // Event handlers and listeners
 // check if this is the right way to do this
 // if so, how to override :hover behavior
+// maybe do on focus instead of click
 const showsList = document.querySelectorAll(".show");
 console.log(showsList)
 
