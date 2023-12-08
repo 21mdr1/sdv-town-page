@@ -58,7 +58,7 @@
 
         @include tablet {
             width: 60%;
-            height: 9rem;
+            height: 8.5rem;
         }
 
         @include desktop {
@@ -74,10 +74,26 @@
     &__title {
         @include header-mobile;
         padding: 2.1rem $mobile-padding 0.3rem;
+
+        @include tablet {
+            @include section-header-tablet;
+            padding: $tablet-headline-padding $tablet-out-padding $tablet-out-padding;
+        }
     }
 
     &__container {
         padding-bottom: $mobile-padding;
+
+        @include tablet {
+            padding: 0 1.125rem;
+            padding-bottom: $tablet-out-padding;
+        }
+    }
+
+    &__header {
+        @include flex(flex-start, center);
+        padding: 0 1.125rem;
+        padding-right: 10.5rem;
     }
 }
 
@@ -88,6 +104,10 @@
     padding-bottom: 0.9rem;
 
     @include tablet {
+        padding: 0.9rem 1.125rem;
+
+        @include flex(space-between, center);
+
         &:hover {
             background-color: $alabaster;
         }
@@ -103,6 +123,21 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding-bottom: 0.3212rem;
+
+        @include tablet {
+            display: none;
+            padding-bottom: 0;
+        }
+
+        &--header {
+            display: none;
+
+            @include tablet {
+                display: block;
+                padding-bottom: 0.2rem;
+                flex: 1 0 0;
+            }
+        }
     }
 
     &__content {
@@ -113,6 +148,12 @@
 
         &--bold {
             font-weight: 600;
+        }
+
+        @include tablet {
+            padding-bottom: 0;
+            padding-top: 0.1rem;
+            flex: 1 0 0;
         }
     }
 
@@ -133,9 +174,11 @@
             background-color: $bandsite-darkblack;
         }
 
-        // @include tablet {
-        //     min-width: 150px;
-        // with 32px+ of padding left & right;
-        // }
+        @include tablet {
+            width: 9.375rem;
+            margin-top: 0;
+            // min-width: 150px;
+            // with 32px+ of padding left & right;
+        }
     }
 }

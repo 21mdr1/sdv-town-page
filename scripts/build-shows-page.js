@@ -52,6 +52,14 @@ createAndAppendElement(main, tempInfo);
 tempInfo = {tag: "div", classes: ["shows__container"], content: ''};
 const showsContainer = createAndAppendElement(main, tempInfo);
 
+tempInfo = {tag: 'div', classes: ['shows__header'], content: ''}
+const tableHeader = createAndAppendElement(showsContainer, tempInfo)
+
+for(label of ["date", "venue", "location"]){
+    tempInfo = {tag: "h4", classes: ['show__label', 'show__label--header'], content: label};
+    createAndAppendElement(tableHeader, tempInfo)
+}
+
 // to do: change date to dateTime format
 let shows = [
     {date: 'Mon Sept 06 2021', venue: 'Ronald Lane', location: 'San Francisco, CA'},
