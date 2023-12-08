@@ -707,7 +707,7 @@ ul {
 .form__input:active, .form__textarea:active {
   border: 1px solid #323232;
 }
-.form__input:invalid, .form__textarea:invalid {
+.form__input:user-invalid, .form__textarea:user-invalid {
   border: 1px solid #D22D2D;
 }
 .form__input::-moz-placeholder, .form__textarea::-moz-placeholder {

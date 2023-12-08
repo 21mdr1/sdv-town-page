@@ -250,7 +250,7 @@
             border: 1px solid $bandsite-black;
         }
 
-        &:invalid {
+        &:user-invalid {
             // make this a variable
             border: 1px solid #D22D2D;
         }
