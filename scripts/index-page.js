@@ -1,4 +1,6 @@
 
+// Functions
+
 function createAndAppendElement(parent, elementInfo) {
     let element = newElement(elementInfo);
     parent.appendChild(element);
@@ -15,13 +17,23 @@ function newElement(elementInfo) {
 function displayComment(commentInfo) {
     const commentsContainer = document.querySelector(".comments__container");
 
-    const comment = createAndAppendElement(commentsContainer, {tag: 'article', classes: ['comment'], content: ''})
+    const comment = createAndAppendElement(commentsContainer, {tag: 'article', classes: ['comment'], content: ''});
 
     createAndAppendElement(comment, {tag: 'div', classes: ['comment__img'], content: ''})
-    createAndAppendElement(comment, {tag: 'p', classes: ['comment__name'], content: commentInfo.name})
-    createAndAppendElement(comment, {tag: 'p', classes: ['comment__date'], content: commentInfo.date})
-    createAndAppendElement(comment, {tag: 'p', classes: ['comment_text'], content: commentInfo.comment})
+    createAndAppendElement(comment, {tag: 'p', classes: ['comment__name'], content: commentInfo.name});
+    createAndAppendElement(comment, {tag: 'p', classes: ['comment__date'], content: commentInfo.date});
+    createAndAppendElement(comment, {tag: 'p', classes: ['comment_text'], content: commentInfo.comment});
 }
+
+function createComment(name, date, commentText, commentArray) {
+    commentArray.push({
+        name: name,
+        date: date,
+        comment: commentText,
+    })
+}
+
+// Initial generation
 
 // to do: change dates to datetime format
 const commentInfo = [
@@ -32,7 +44,25 @@ const commentInfo = [
 
 // add logic to sort by time first
 // commentInfo.sort()
-for(let i = 0; i < 3; i++) {
-    displayComment(commentInfo[i])
+commentInfo.forEach((comment) => displayComment(comment))
+
+// Event Handlers and Listeners
+const form = document.querySelector(".comment-form");
+function formSubmitHandler(event) {
+    event.preventDefault()
+
+    const date = new Date(Date.now())
+    const currentDate = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear()
+
+    createComment(event.target.name.value, currentDate, event.target.comment.value, commentInfo)
+
+    const commentsContainer = document.querySelector(".comments__container");
+    commentsContainer.innerHTML = '';
+
+    // sort commentInfo by time
+    commentInfo.forEach((comment) => displayComment(comment))
+
+    event.target.reset();
 }
 
+form.addEventListener('submit', formSubmitHandler);
