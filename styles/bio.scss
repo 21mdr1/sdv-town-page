@@ -153,13 +153,17 @@
 
 // Comments Section
 
-.comment-section {
+.comments {
     @include margin;
     &__title {
         @include header-mobile;
         color: $bandsite-black;
         padding-top: 0.8rem;
         padding-bottom: 0.5rem;
+    }
+
+    &__container {
+        padding-bottom: $mobile-padding;
     }
 }
 
@@ -236,5 +240,39 @@
         &:hover {
             background-color: $bandsite-darkblack;
         }
+    }
+}
+
+.comment {
+    color: $bandsite-black;
+    @include copy-mobile;
+    border-bottom: 2px solid $mercury;
+    padding-top: $mobile-padding;
+    padding-bottom: 0.75rem;
+    @include flex(flex-start, flex-start, $mobile-padding);
+
+    &__img {
+        background-color: $mercury;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    &__container {
+        flex-grow: 1;
+    }
+
+    &__header {
+        @include flex(space-between);
+        padding-bottom: 0.5rem;
+    }
+
+    &__name {
+        font-weight: 600;
+    }
+
+    &__date {
+        color: $silver;
     }
 }

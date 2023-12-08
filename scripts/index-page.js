@@ -20,9 +20,13 @@ function displayComment(commentInfo) {
     const comment = createAndAppendElement(commentsContainer, {tag: 'article', classes: ['comment'], content: ''});
 
     createAndAppendElement(comment, {tag: 'div', classes: ['comment__img'], content: ''})
-    createAndAppendElement(comment, {tag: 'p', classes: ['comment__name'], content: commentInfo.name});
-    createAndAppendElement(comment, {tag: 'p', classes: ['comment__date'], content: commentInfo.date});
-    createAndAppendElement(comment, {tag: 'p', classes: ['comment_text'], content: commentInfo.comment});
+
+    const commentContainer = createAndAppendElement(comment, {tag: 'div', classes: ['comment__container'], content: ''})
+    const commentHeader = createAndAppendElement(commentContainer, {tag: 'div', classes: ['comment__header'], content: ''})
+
+    createAndAppendElement(commentHeader, {tag: 'p', classes: ['comment__name'], content: commentInfo.name});
+    createAndAppendElement(commentHeader, {tag: 'p', classes: ['comment__date'], content: commentInfo.date});
+    createAndAppendElement(commentContainer, {tag: 'p', classes: ['comment_text'], content: commentInfo.comment});
 }
 
 function createComment(name, date, commentText, commentArray) {
@@ -51,10 +55,12 @@ const form = document.querySelector(".form");
 function formSubmitHandler(event) {
     event.preventDefault()
 
-    const date = new Date(Date.now())
-    const currentDate = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear()
+    const date = new Date();
+    const formatter = new Intl.DateTimeFormat('en-US', {day: '2-digit', month: '2-digit', year: 'numeric' });
+    const formattedDate = formatter.format(date);
+    console.log(formattedDate);
 
-    createComment(event.target.name.value, currentDate, event.target.comment.value, commentInfo)
+    createComment(event.target.name.value, formattedDate, event.target.comment.value, commentInfo)
 
     const commentsContainer = document.querySelector(".comments__container");
     commentsContainer.innerHTML = '';
