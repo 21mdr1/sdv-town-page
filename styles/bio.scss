@@ -155,15 +155,27 @@
 
 .comments {
     @include margin;
+
     &__title {
         @include header-mobile;
         color: $bandsite-black;
         padding-top: 0.8rem;
         padding-bottom: 0.5rem;
+
+        @include tablet {
+            @include section-header-tablet;
+            padding-top: $tablet-headline-padding;
+            padding-bottom: 2rem;
+        }
     }
 
     &__container {
         padding-bottom: $mobile-padding;
+
+        @include tablet {
+            padding-right: 3.75rem;
+            padding-left: 3.75rem;
+        }
     }
 }
 
@@ -171,6 +183,12 @@
     @include flex(flex-start, flex-start, $mobile-padding);
     border-bottom: 1px solid $mercury;
     padding-bottom: $mobile-padding;
+    
+    @include tablet {
+        margin-right: 3.75rem;
+        margin-left: 3.75rem;
+        border-bottom-width: 2px;
+    }
 
     &__img {
         display: block;
@@ -180,12 +198,29 @@
         object-position: 20% 0;
         border-radius: 50%;
         margin-top: 1.5rem;
+
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    &__container {
+        flex-grow: 1;
+        @include flex(flex-start, stretch);
+        flex-direction: column;
     }
 
     &__label {
         @include label-mobile;
         text-transform: uppercase;
         color: $silver;
+
+        @include tablet {
+            @include label-tablet;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
     }
 
     &__input {
@@ -240,6 +275,11 @@
         &:hover {
             background-color: $bandsite-darkblack;
         }
+
+        @include tablet {
+            align-self: flex-end;
+            width: 9.5rem;
+        }
     }
 }
 
@@ -251,12 +291,26 @@
     padding-bottom: 0.75rem;
     @include flex(flex-start, flex-start, $mobile-padding);
 
+    @include tablet {
+        box-sizing: border-box;
+        padding-top: 1.75rem;
+        padding-bottom: 1.75rem;
+        height: 9rem;
+        line-height: 1.35rem;
+        letter-spacing: 0.4px;
+    }
+
     &__img {
         background-color: $mercury;
         width: 2.25rem;
         height: 2.25rem;
         border-radius: 50%;
         flex-shrink: 0;
+
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
+        }
     }
 
     &__container {
