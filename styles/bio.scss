@@ -150,3 +150,91 @@
     }
 
 }
+
+// Comments Section
+
+.comment-section {
+    @include margin;
+    &__title {
+        @include header-mobile;
+        color: $bandsite-black;
+        padding-top: 0.8rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+.form {
+    @include flex(flex-start, flex-start, $mobile-padding);
+    border-bottom: 1px solid $mercury;
+    padding-bottom: $mobile-padding;
+
+    &__img {
+        display: block;
+        width: 2.25rem;
+        height: 2.25rem;
+        object-fit: cover;
+        object-position: 20% 0;
+        border-radius: 50%;
+        margin-top: 1.5rem;
+    }
+
+    &__label {
+        @include label-mobile;
+        text-transform: uppercase;
+        color: $silver;
+    }
+
+    &__input {
+        background-color: $alabaster;
+        box-sizing: border-box;
+        padding: 0.75rem;
+        border: 1px solid $mercury;
+        border-radius: 4px;
+        width: 100%;
+        height: 2.25rem;
+        margin-top: 0.25rem;
+        margin-bottom: $mobile-padding;
+        font-family: 'Avenir Next', Verdana, Geneva, Tahoma, sans-serif;
+        @include copy-mobile;
+
+
+        &:active {
+            border: 1px solid $bandsite-black;
+        }
+
+        &:invalid {
+            // make this a variable
+            border: 1px solid #D22D2D;
+        }
+
+        &::placeholder {
+            color: $bandsite-black;
+            }
+
+        @include tablet {
+            min-height: 3rem;
+            padding: 1rem; 
+        }
+    }
+
+    &__textarea {
+        @extend .form__input;
+        resize: none;
+        height: 6rem;
+    }
+
+    &__button {
+        @include subheader-mobile;
+        text-transform: uppercase;
+        background-color: $bandsite-black;
+        color: $white;
+        border: none;
+        border-radius: 4px;
+        width: 100%;
+        height: 2.5rem;
+
+        &:hover {
+            background-color: $bandsite-darkblack;
+        }
+    }
+}

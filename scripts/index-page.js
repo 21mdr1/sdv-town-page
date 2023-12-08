@@ -47,7 +47,7 @@ const commentInfo = [
 commentInfo.forEach((comment) => displayComment(comment))
 
 // Event Handlers and Listeners
-const form = document.querySelector(".comment-form");
+const form = document.querySelector(".form");
 function formSubmitHandler(event) {
     event.preventDefault()
 
