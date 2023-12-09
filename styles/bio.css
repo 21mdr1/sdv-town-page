@@ -611,8 +611,7 @@ ul {
 }
 @media (min-width: 768px) {
   .comments__container {
-    padding-right: 3.75rem;
-    padding-left: 3.75rem;
+    padding: 0 3.75rem;
     padding-bottom: 2.25rem;
   }
 }
@@ -719,7 +718,7 @@ ul {
 }
 @media (min-width: 768px) {
   .form__input, .form__textarea {
-    min-height: 3rem;
+    height: 3rem;
     padding: 1rem;
   }
 }
@@ -744,8 +743,12 @@ ul {
 }
 @media (min-width: 768px) {
   .form__button {
-    align-self: flex-end;
     width: 9.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .form__button {
+    align-self: flex-end;
   }
 }
 
@@ -776,10 +779,15 @@ ul {
   }
 }
 .comment__img {
-  background-color: #E1E1E1;
+  display: block;
   width: 2.25rem;
   height: 2.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 20% 0;
+     object-position: 20% 0;
   border-radius: 50%;
+  background-color: #E1E1E1;
   flex-shrink: 0;
 }
 @media (min-width: 768px) {

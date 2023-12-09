@@ -173,8 +173,7 @@
         padding-bottom: $mobile-padding;
 
         @include tablet {
-            padding-right: 3.75rem;
-            padding-left: 3.75rem;
+            padding: 0 3.75rem;
             padding-bottom: $tablet-out-padding;
         }
 
@@ -200,18 +199,8 @@
     }
 
     &__img {
-        display: block;
-        width: 2.25rem;
-        height: 2.25rem;
-        object-fit: cover;
-        object-position: 20% 0;
-        border-radius: 50%;
+        @include avatar;
         margin-top: 1.5rem;
-
-        @include tablet {
-            width: 3rem;
-            height: 3rem;
-        }
     }
 
     &__container {
@@ -252,7 +241,6 @@
         }
 
         &:user-invalid {
-            // make this a variable
             border: 1px solid $invalid-red;
         }
 
@@ -261,7 +249,7 @@
             }
 
         @include tablet {
-            min-height: 3rem;
+            height: 3rem;
             padding: 1rem; 
         }
     }
@@ -273,22 +261,10 @@
     }
 
     &__button {
-        @include subheader-mobile;
-        text-transform: uppercase;
-        background-color: $bandsite-black;
-        color: $white;
-        border: none;
-        border-radius: 4px;
-        width: 100%;
-        height: 2.5rem;
-
-        &:hover {
-            background-color: $bandsite-darkblack;
-        }
+        @include button;
 
         @include tablet {
             align-self: flex-end;
-            width: 9.5rem;
         }
     }
 }
@@ -311,16 +287,9 @@
     }
 
     &__img {
+        @include avatar;
         background-color: $mercury;
-        width: 2.25rem;
-        height: 2.25rem;
-        border-radius: 50%;
         flex-shrink: 0;
-
-        @include tablet {
-            width: 3rem;
-            height: 3rem;
-        }
     }
 
     &__container {
