@@ -5,10 +5,11 @@
 
 // Hero
 .hero {
-    //rework heights for mobile and tablet
-
     @include background-image("../assets/Images/hero-shows.jpg");
     
+    height: 57.5vw;
+    min-height: 17.4rem;
+
     @include desktop {
         height: 40rem;
     }
