@@ -753,13 +753,14 @@ ul {
 }
 
 .comment {
+  box-sizing: border-box;
+  min-height: 9rem;
   color: #323232;
   font-weight: 400;
   font-size: 0.813rem;
   line-height: 1.125rem;
   border-bottom: 2px solid #E1E1E1;
-  padding-top: 1rem;
-  padding-bottom: 0.75rem;
+  padding: 1rem 0 0.75rem 0;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -770,10 +771,7 @@ ul {
 }
 @media (min-width: 768px) {
   .comment {
-    box-sizing: border-box;
-    padding-top: 1.75rem;
-    padding-bottom: 1.75rem;
-    height: 9rem;
+    padding: 1.75rem 0;
     line-height: 1.35rem;
     letter-spacing: 0.4px;
   }

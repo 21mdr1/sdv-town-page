@@ -270,18 +270,16 @@
 }
 
 .comment {
+    box-sizing: border-box;
+    min-height: 9rem;
     color: $bandsite-black;
     @include copy-mobile;
     border-bottom: 2px solid $mercury;
-    padding-top: $mobile-padding;
-    padding-bottom: 0.75rem;
+    padding: $mobile-padding 0 0.75rem 0;
     @include flex(flex-start, flex-start, $mobile-padding);
 
     @include tablet {
-        box-sizing: border-box;
-        padding-top: 1.75rem;
-        padding-bottom: 1.75rem;
-        height: 9rem;
+        padding: 1.75rem 0;
         line-height: 1.35rem;
         letter-spacing: 0.4px;
     }
