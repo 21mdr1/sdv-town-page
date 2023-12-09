@@ -67,8 +67,6 @@
 }
 
 .main {
-    // need to fix the rest so that I can use:
-    // @mixin margin
     @include desktop {
         width: $desktop-content-width;
         margin: auto;
@@ -88,7 +86,6 @@
         }
 
         @include desktop {
-            // will eventually be deleted
             padding-left: 0;
             pading-right: 0;
         }
@@ -104,10 +101,8 @@
 
         @include desktop {
             flex-grow: 1;
-            //will eventually need to be changed:
             padding-right: 0;
             padding-left: 1.125rem;
-            // if I have the energy : the dividers go a bit further than the bandsite logo below
             padding-top: $tablet-headline-padding;
         }
     }
