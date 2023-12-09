@@ -7,7 +7,7 @@
 .hero {
     //rework heights for mobile and tablet
 
-    @include background-image("../../assets/Images/hero-shows.jpg");
+    @include background-image("../assets/Images/hero-shows.jpg");
     
     @include desktop {
         height: 40rem;
@@ -212,8 +212,6 @@
         @include tablet {
             width: 9.375rem;
             margin-top: 0;
-            // min-width: 150px;
-            // with 32px+ of padding left & right;
         }
     }
 }

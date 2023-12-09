@@ -14,6 +14,14 @@ function newElement(elementInfo) {
     return element;
 }
 
+function createComment(name, date, commentText, commentArray) {
+    commentArray.push({
+        name: name,
+        date: date,
+        comment: commentText,
+    })
+}
+
 function displayComment(commentInfo) {
     const commentsContainer = document.querySelector(".comments__container");
 
@@ -29,32 +37,27 @@ function displayComment(commentInfo) {
     createAndAppendElement(commentContainer, {tag: 'p', classes: ['comment_text'], content: commentInfo.comment});
 }
 
-function createComment(name, date, commentText, commentArray) {
-    commentArray.push({
-        name: name,
-        date: date,
-        comment: commentText,
-    })
+function displayAllComments(commentInfo) {
+    commentInfo.toReversed().forEach((comment) => displayComment(comment))
 }
 
 // Initial generation
 
 // to do: change dates to datetime format
 const commentInfo = [
-    {name: "Connor Walton", date: "02/17/2021", comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."},
+    {name: "Miles Acosta", date: "12/20/2020", comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
     {name: "Emilie Beach", date: "01/09/2021", comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
-    {name: "Miles Acosta", date: "12/20/2020", comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."}
+    {name: "Connor Walton", date: "02/17/2021", comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."}
 ]
 
-// add logic to sort by time first
-// commentInfo.sort()
-commentInfo.forEach((comment) => displayComment(comment))
+displayAllComments(commentInfo)
 
 // Event Handlers and Listeners
 const form = document.querySelector(".form");
 function formSubmitHandler(event) {
     event.preventDefault()
 
+    // this formatter will be used in display comment, creating a comment will use a Date object
     const date = new Date();
     const formatter = new Intl.DateTimeFormat('en-US', {day: '2-digit', month: '2-digit', year: 'numeric' });
     const formattedDate = formatter.format(date);
@@ -65,8 +68,7 @@ function formSubmitHandler(event) {
     const commentsContainer = document.querySelector(".comments__container");
     commentsContainer.innerHTML = '';
 
-    // sort commentInfo by time
-    commentInfo.forEach((comment) => displayComment(comment))
+    displayAllComments(commentInfo)
 
     event.target.reset();
 }

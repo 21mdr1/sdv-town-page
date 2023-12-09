@@ -73,17 +73,13 @@
             <h2 class="comments__title">Join the Conversation</h2>
             <form class="form">
                 <img class="form__img" src="./assets/Images/Mohan-muruge.jpg" alt="user photo">
-                <div class="form__container">
-                    <label for="form__name" class="form__label">
-                        name
-                        <input class="form__input" id="form__name" type="text" name="name" placeholder="Enter your name" required>
-                    </label>
-                    <label for="from__comment" class="form__label">
-                        comment
-                        <textarea class="form__textarea" id="from__comment" name="comment" placeholder="Add a new comment" required></textarea>
-                    </label>
+                <fieldset class="form__container">
+                    <label for="form__name" class="form__label">name</label>
+                    <input class="form__input" id="form__name" type="text" name="name" placeholder="Enter your name" required>
+                    <label for="from__comment" class="form__label">comment</label>
+                    <textarea class="form__textarea" id="from__comment" name="comment" placeholder="Add a new comment" required></textarea>
                     <button class="form__button" type="subsmit">comment</button>
-                </div>
+                </fieldset>
             </form>
             <div class="comments__container"></div>
         </section>

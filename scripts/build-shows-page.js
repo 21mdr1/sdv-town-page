@@ -63,7 +63,7 @@ for(label of ["date", "venue", "location"]){
 // to do: change date to dateTime format
 let shows = [
     {date: 'Mon Sept 06 2021', venue: 'Ronald Lane', location: 'San Francisco, CA'},
-    {date: 'Tue Spet 21 2021', venue: 'Pier 3 East', location: 'San Francisco, CA'},
+    {date: 'Tue Sept 21 2021', venue: 'Pier 3 East', location: 'San Francisco, CA'},
     {date: 'Fri Oct 15 2021', venue: 'View Lounge', location: 'San Francisco, CA'},
     {date: 'Sat Nov 06 2021', venue: 'Hyatt Agency', location: 'San Francisco, CA'},
     {date: 'Fri Nov 26 2021', venue: 'Moscow Center', location: 'San Francisco, CA'},
@@ -73,29 +73,7 @@ let shows = [
 
 shows.forEach((show) => {appendShow(showsContainer, show)})
 
-// Event handlers and listeners
-// check if this is the right way to do this
-// if so, how to override :hover behavior
-// maybe do on focus instead of click
 const showsList = document.querySelectorAll(".show");
-
-// function showsFocusHandler(event, listeningShow) {
-//     console.log("focus")
-//     listeningShow.classList.add('show--selected');
-// }
-
-// function showsBlurHandler(event, listeningShow) {
-//     console.log("blur")
-//     listeningShow.classList.remove('show--selected')
-// }
-
-// showsList.forEach((show)=>{
-//     show.addEventListener('focus', (event) => showsFocusHandler(event, show))
-// })
-
-// showsList.forEach((show)=>{
-//     show.addEventListener('blur', (event) => showsBlurHandler(event, show))
-// })
 
 function showsClickHandler(event, listeningShow) {
     event.stopPropagation()
@@ -116,7 +94,9 @@ function showsUnclickHandler(event) {
 }
 
 showsList.forEach((showItem) => {
-    showItem.addEventListener('click', (event) => {showsClickHandler(event, showItem)})
+    showItem.addEventListener('click', (event) => {
+        showsClickHandler(event, showItem)
+    })
 })
 
 window.addEventListener('click', showsUnclickHandler)

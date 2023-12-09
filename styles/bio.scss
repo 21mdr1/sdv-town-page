@@ -5,7 +5,7 @@
 
 // Hero
 .hero {
-    @include background-image("../../assets/Images/hero-bio.jpg");
+    @include background-image("../assets/Images/hero-bio.jpg");
     height: 57.5vw;
 
     @include desktop {
@@ -215,6 +215,7 @@
     }
 
     &__container {
+        border: none;
         flex-grow: 1;
         @include flex(flex-start, stretch);
         flex-direction: column;
@@ -252,7 +253,7 @@
 
         &:user-invalid {
             // make this a variable
-            border: 1px solid #D22D2D;
+            border: 1px solid $invalid-red;
         }
 
         &::placeholder {
