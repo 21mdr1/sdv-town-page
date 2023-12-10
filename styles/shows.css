@@ -355,6 +355,7 @@ ul {
   margin: 0 1rem;
   padding-top: 2rem;
   padding-bottom: 1.5rem;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .hero__content {
@@ -376,7 +377,7 @@ ul {
 @media (min-width: 1280px) {
   .hero__content {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     -moz-column-gap: initial;
          column-gap: initial;
@@ -412,16 +413,25 @@ ul {
 @media (min-width: 1280px) {
   .hero__title {
     width: 80%;
+    max-width: 39rem;
   }
 }
 .hero__music {
-  width: 100%;
-  height: 6.3rem;
+  width: 114.3%;
+  height: 7.2rem;
+  transform: scale(0.875);
+  transform-origin: left;
 }
 @media (min-width: 768px) {
   .hero__music {
-    width: 60%;
-    height: 8.5rem;
+    width: 50.85%;
+    height: 7.2rem;
+    transform: scale(1.18);
+  }
+}
+@media (min-width: 1280px) {
+  .hero__music {
+    width: 21rem;
   }
 }
 

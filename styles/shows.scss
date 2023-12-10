@@ -19,6 +19,7 @@
         @include margin;
         padding-top: 2rem;
         padding-bottom: $mobile-headline-padding;
+        overflow: hidden;
 
         @include tablet {
             padding-top: 4rem;
@@ -26,7 +27,7 @@
         }
 
         @include desktop {
-            @include flex(center, center);
+            @include flex(flex-start, center);
         }
     }
 
@@ -52,16 +53,24 @@
 
         @include desktop {
             width: 80%;
+            max-width: 39rem;
         }
     }
 
     &__music {
-        width: 100%;
-        height: 6.3rem;
+        width: 114.3%;
+        height: 7.2rem;
+        transform:scale(0.875);
+        transform-origin: left;
 
         @include tablet {
-            width: 60%;
-            height: 8.5rem;
+            width: 50.85%;
+            height: 7.2rem;
+            transform:scale(1.18);
+        }
+
+        @include desktop {
+            width: 21rem;
         }
     }
 }
