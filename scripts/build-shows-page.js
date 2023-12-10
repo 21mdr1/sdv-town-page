@@ -103,36 +103,14 @@ for(label of ["date", "venue", "location"]){
     createAndAppendElement(tableHeader, tempInfo)
 }
 
-// to do: change date to dateTime format
-
-const dates = [
-    new Date(Date.parse('Mon Sept 06 2021')),
-    new Date(Date.parse('Tue Sept 21 2021')),
-    new Date(Date.parse('Fri Oct 15 2021')),
-    new Date(Date.parse('Sat Nov 06 2021')),
-    new Date(Date.parse('Fri Nov 26 2021')),
-    new Date(Date.parse('Wed Dec 15 2021')),
-]
-
-
 const shows = [
-    {date: dates[0], venue: 'Ronald Lane', location: 'San Francisco, CA'},
-    {date: dates[1], venue: 'Pier 3 East', location: 'San Francisco, CA'},
-    {date: dates[2], venue: 'View Lounge', location: 'San Francisco, CA'},
-    {date: dates[3], venue: 'Hyatt Agency', location: 'San Francisco, CA'},
-    {date: dates[4], venue: 'Moscow Center', location: 'San Francisco, CA'},
-    {date: dates[5], venue: 'Press Club', location: 'San Francisco, CA'}
+    {date: new Date(Date.parse('Mon Sept 06 2021')), venue: 'Ronald Lane', location: 'San Francisco, CA'},
+    {date: new Date(Date.parse('Tue Sept 21 2021')), venue: 'Pier 3 East', location: 'San Francisco, CA'},
+    {date: new Date(Date.parse('Tue Sept 21 2021')), venue: 'View Lounge', location: 'San Francisco, CA'},
+    {date: new Date(Date.parse('Sat Nov 06 2021')), venue: 'Hyatt Agency', location: 'San Francisco, CA'},
+    {date: new Date(Date.parse('Fri Nov 26 2021')), venue: 'Moscow Center', location: 'San Francisco, CA'},
+    {date: new Date(Date.parse('Wed Dec 15 2021')), venue: 'Press Club', location: 'San Francisco, CA'}
 ]
-
-// const shows = [
-//     {date: 'Mon Sept 06 2021', venue: 'Ronald Lane', location: 'San Francisco, CA'},
-//     {date: 'Tue Sept 21 2021', venue: 'Pier 3 East', location: 'San Francisco, CA'},
-//     {date: 'Fri Oct 15 2021', venue: 'View Lounge', location: 'San Francisco, CA'},
-//     {date: 'Sat Nov 06 2021', venue: 'Hyatt Agency', location: 'San Francisco, CA'},
-//     {date: 'Fri Nov 26 2021', venue: 'Moscow Center', location: 'San Francisco, CA'},
-//     {date: 'Wed Dec 15 2021', venue: 'Press Club', location: 'San Francisco, CA'}
-// ]
-
 
 shows.forEach((show) => {appendShow(showsContainer, show)})
 

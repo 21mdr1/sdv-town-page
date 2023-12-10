@@ -85,16 +85,10 @@ function formatDate(date, format) {
 
 // Initial generation
 
-const dates = [
-    new Date(Date.parse("2020-12-20")),
-    new Date(Date.parse("2021-01-09")),
-    new Date(Date.parse("2021-02-17")),
-]
-
 const commentInfo = [
-    {name: "Miles Acosta", date: dates[0], comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
-    {name: "Emilie Beach", date: dates[1], comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
-    {name: "Connor Walton", date: dates[2], comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."}
+    {name: "Miles Acosta", date: new Date(Date.parse("2020-12-20")), comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
+    {name: "Emilie Beach", date: new Date(Date.parse("2021-01-09")), comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
+    {name: "Connor Walton", date: new Date(Date.parse("2021-02-17")), comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."}
 ]
 displayAllComments(commentInfo)
 
