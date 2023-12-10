@@ -23,7 +23,7 @@ function createComment(name, date, commentText, commentArray) {
 }
 
 function displayComment(commentInfo) {
-    const date = formatDate(commentInfo.date, 'MM/DD/YYYY');
+    const date = formatDate(commentInfo.date, 'relative');
     const commentsContainer = document.querySelector(".comments__container");
 
     const comment = createAndAppendElement(commentsContainer, {tag: 'article', classes: ['comment'], content: ''});
@@ -45,13 +45,28 @@ function displayAllComments(commentInfo) {
 function formatDate(date, format) {
     let options;
 
+    if (format === 'relative') {
+        let today = new Date();
+        let day = 1000 * 3600 * 24;
+
+        let difference = (today - date) / day;
+
+        if (difference <= 1) {
+            return 'Today';
+        }
+        if (difference <= 7) {
+            return `${Math.round(difference)}d`;
+        }
+        format = 'MM/DD/YYYY';
+
+    }
+
     if (format === 'MM/DD/YYYY') {
         options = {
             day: '2-digit', 
             month: '2-digit', 
             year: 'numeric',
         }
-        
     }
 
     if (format === 'Week Mon DD YYYY') {
@@ -64,23 +79,23 @@ function formatDate(date, format) {
     }
 
     const formatter = new Intl.DateTimeFormat('en-US', options);
-    return formatter.format(date);
-    
-    // calculate, relative date
-    //  the rules are if < a day, say today, if < a week, say days ago, if > say date
-
-    //You are correct. The (arguably) best modern way to do relative dates is to use a simple function combined with the Intl.RelativeTimeFormat object. Was able to create a robust relative time formatter in less than 20 lines of code. Look into Intl.RelativeTimeFormat if you're interested in building it
-
+    return formatter.format(date).replace(/,/g, '');
 }
+
 
 // Initial generation
 
-const commentInfo = [
-    {name: "Miles Acosta", date: Date.parse("12/20/2020"), comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
-    {name: "Emilie Beach", date: Date.parse("01/09/2021"), comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
-    {name: "Connor Walton", date: Date.parse("02/17/2021"), comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."}
+const dates = [
+    new Date(Date.parse("2020-12-20")),
+    new Date(Date.parse("2021-01-09")),
+    new Date(Date.parse("2021-02-17")),
 ]
 
+const commentInfo = [
+    {name: "Miles Acosta", date: dates[0], comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
+    {name: "Emilie Beach", date: dates[1], comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
+    {name: "Connor Walton", date: dates[2], comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."}
+]
 displayAllComments(commentInfo)
 
 // Event Handlers and Listeners
@@ -88,7 +103,8 @@ const form = document.querySelector(".form");
 function formSubmitHandler(event) {
     event.preventDefault()
 
-    createComment(event.target.name.value, Date(), event.target.comment.value, commentInfo)
+    const date = new Date()
+    createComment(event.target.name.value, date, event.target.comment.value, commentInfo)
 
     const commentsContainer = document.querySelector(".comments__container");
     commentsContainer.innerHTML = '';
