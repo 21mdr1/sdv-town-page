@@ -24,6 +24,7 @@ function displayComment(commentInfo) {
     const likes = createAndAppendElement(social, {tag: 'div', classes: ['comment__likes'], content: ''})
     const likeButton = createAndAppendElement(likes, {tag: 'button', classes: ['comment__like-button'], content: ''})
     likeButton.value = commentInfo.id;
+    likeButton.addEventListener('click', likeHandler);
     createAndAppendElement(likes, {tag: 'span', classes: ['comment__like-number'], content: commentInfo.likes})
 
     const deleteButton = createAndAppendElement(social, {tag: 'button', classes: ['comment__delete'], content: ''})
@@ -36,11 +37,8 @@ function displayAllComments(commentInfo) {
     commentInfo.forEach((comment) => displayComment(comment))
 }
 
-// Initial generation
+// Event Handlers
 
-displayAllComments(await bandSiteApi.getComments())
-
-// Event Handlers and Listeners
 const form = document.querySelector(".form");
 async function formSubmitHandler(event) {
     event.preventDefault()
@@ -50,17 +48,10 @@ async function formSubmitHandler(event) {
             comment: event.target.comment.value,
     });
 
-    // const commentsContainer = document.querySelector(".comments__container");
-    // commentsContainer.innerHTML = '';
-
     displayAllComments(await bandSiteApi.getComments());
 
     event.target.reset();
 }
-
-form.addEventListener('submit', formSubmitHandler);
-
-const likeButtons = document.querySelectorAll(".comment__like-button");
 
 async function likeHandler(event) {
     const id = this.value;
@@ -68,6 +59,8 @@ async function likeHandler(event) {
     displayAllComments(await bandSiteApi.getComments());
 }
 
-likeButtons.forEach((button) => {
-    button.addEventListener('click', likeHandler);
-})
+// Initial generation
+
+displayAllComments(await bandSiteApi.getComments())
+
+form.addEventListener('submit', formSubmitHandler);
