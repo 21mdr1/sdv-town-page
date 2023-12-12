@@ -1,6 +1,6 @@
-import bandSiteApi from "./band-site-api.js";
-import {createAndAppendElement} from "./create-element.js";
-import formatDate from "./dates.js";
+import bandSiteApi from "./modules/band-site-api.js";
+import {createAndAppendElement} from "./modules/create-element.js";
+import formatDate from "./modules/dates.js";
 
 
 // Functions
