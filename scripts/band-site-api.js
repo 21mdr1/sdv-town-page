@@ -6,7 +6,8 @@ class BandSiteApi {
 
     async postComment(comment) {
         try {
-            let response =  await axios.post(this.baseUrl + '/comments?api_key=' + this.apiKey, comment);
+            const url = this.baseUrl + 'comments?api_key=' + this.apiKey;
+            let response =  await axios.post(url, comment);
             return response;
         } catch (error) {
             console.log('There was an error saving the comment', error);
@@ -15,9 +16,10 @@ class BandSiteApi {
 
     async getComments() {
         try {
-            let response = await axios.get(this.baseUrl + '/comments?api_key=' + this.apiKey);
+            const url = this.baseUrl + 'comments?api_key=' + this.apiKey;
+            let response = await axios.get(url);
             // sort array
-            return response;
+            return response.data;
         } catch (error) {
             console.log('There was an error loading comments', error);
         }
@@ -25,9 +27,10 @@ class BandSiteApi {
 
     async getShows() {
         try {
-            let response = await axios.get(this.baseUrl + '/showdates?api_key=' + this.apiKey);
+            const url = this.baseUrl + 'showdates?api_key=' + this.apiKey;
+            let response = await axios.get(url);
             // sort array?
-            return response;
+            return response.data;
         } catch (error) {
             console.log('There was an error loading shows', error);
         }

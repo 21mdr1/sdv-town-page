@@ -18,16 +18,16 @@ import formatDate from "./dates.js";
 //     return element;
 // }
 
-function createComment(name, date, commentText, commentArray) {
+function createComment(name, timestamp, commentText, commentArray) {
     commentArray.push({
         name: name,
-        date: date,
+        timestamp: timestamp,
         comment: commentText,
     })
 }
 
 function displayComment(commentInfo) {
-    const date = formatDate(commentInfo.date, 'relative');
+    const date = formatDate(commentInfo.timestamp, 'relative');
     const commentsContainer = document.querySelector(".comments__container");
 
     const comment = createAndAppendElement(commentsContainer, {tag: 'article', classes: ['comment'], content: ''});
@@ -43,7 +43,8 @@ function displayComment(commentInfo) {
 }
 
 function displayAllComments(commentInfo) {
-    commentInfo.toReversed().forEach((comment) => displayComment(comment))
+    // commentInfo.toReversed().forEach((comment) => displayComment(comment))
+    commentInfo.forEach((comment) => displayComment(comment))
 }
 
 // function formatDate(date, format) {
@@ -89,11 +90,13 @@ function displayAllComments(commentInfo) {
 
 // Initial generation
 
-const commentInfo = [
-    {name: "Miles Acosta", date: new Date(Date.parse("2020-12-20")), comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
-    {name: "Emilie Beach", date: new Date(Date.parse("2021-01-09")), comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
-    {name: "Connor Walton", date: new Date(Date.parse("2021-02-17")), comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."}
-]
+// const commentInfo = [
+//     {name: "Miles Acosta", date: new Date(Date.parse("2020-12-20")), comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
+//     {name: "Emilie Beach", date: new Date(Date.parse("2021-01-09")), comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
+//     {name: "Connor Walton", date: new Date(Date.parse("2021-02-17")), comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."}
+// ]
+
+const commentInfo = await bandSiteApi.getComments();
 
 displayAllComments(commentInfo)
 
@@ -102,8 +105,8 @@ const form = document.querySelector(".form");
 function formSubmitHandler(event) {
     event.preventDefault()
 
-    const date = new Date()
-    createComment(event.target.name.value, date, event.target.comment.value, commentInfo)
+    const timestamp = new Date()
+    createComment(event.target.name.value, timestamp, event.target.comment.value, commentInfo)
 
     const commentsContainer = document.querySelector(".comments__container");
     commentsContainer.innerHTML = '';
