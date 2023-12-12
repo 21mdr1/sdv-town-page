@@ -1,18 +1,21 @@
+import bandSiteApi from "./band-site-api.js";
+import {newElement, createAndAppendElement} from "./create-element.js";
+
 
 // Functions
 
-function createAndAppendElement(parent, elementInfo) {
-    let element = newElement(elementInfo);
-    parent.appendChild(element);
-    return element
-}
+// function createAndAppendElement(parent, elementInfo) {
+//     let element = newElement(elementInfo);
+//     parent.appendChild(element);
+//     return element
+// }
 
-function newElement(elementInfo) {
-    let element = document.createElement(elementInfo.tag);
-    elementInfo.classes.forEach((classItem) => element.classList.add(classItem))
-    element.textContent = elementInfo.content;
-    return element;
-}
+// function newElement(elementInfo) {
+//     let element = document.createElement(elementInfo.tag);
+//     elementInfo.classes.forEach((classItem) => element.classList.add(classItem))
+//     element.textContent = elementInfo.content;
+//     return element;
+// }
 
 function createComment(name, date, commentText, commentArray) {
     commentArray.push({

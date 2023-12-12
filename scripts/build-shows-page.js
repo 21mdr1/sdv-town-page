@@ -1,18 +1,21 @@
+import bandSiteApi from "./band-site-api.js";
+import {newElement, createAndAppendElement} from "./create-element.js";
+
 // Functions, etc.
 let tempInfo;
 
-function createAndAppendElement(parent, elementInfo) {
-    let element = newElement(elementInfo);
-    parent.appendChild(element);
-    return element
-}
+// function createAndAppendElement(parent, elementInfo) {
+//     let element = newElement(elementInfo);
+//     parent.appendChild(element);
+//     return element
+// }
 
-function newElement(elementInfo) {
-    let element = document.createElement(elementInfo.tag);
-    elementInfo.classes.forEach((classItem) => {element.classList.add(classItem)})
-    element.textContent = elementInfo.content;
-    return element;
-}
+// function newElement(elementInfo) {
+//     let element = document.createElement(elementInfo.tag);
+//     elementInfo.classes.forEach((classItem) => {element.classList.add(classItem)})
+//     element.textContent = elementInfo.content;
+//     return element;
+// }
 
 function appendShow(parent, showInfo) {
     let show = createShow(showInfo);
@@ -24,7 +27,7 @@ function createShow(showInfo) {
     tempInfo = {tag: "div", classes: ["show"], content: ''};
     const container = newElement(tempInfo);  
 
-    for(label of ["date", "venue", "location"]) {
+    for(let label of ["date", "venue", "location"]) {
         tempInfo = {tag: "h4", classes: ["show__label"], content: label};
         createAndAppendElement(container,  tempInfo);
 
@@ -98,7 +101,7 @@ const showsContainer = createAndAppendElement(main, tempInfo);
 tempInfo = {tag: 'div', classes: ['shows__header'], content: ''}
 const tableHeader = createAndAppendElement(showsContainer, tempInfo)
 
-for(label of ["date", "venue", "location"]){
+for(let label of ["date", "venue", "location"]){
     tempInfo = {tag: "h4", classes: ['show__label', 'show__label--header'], content: label};
     createAndAppendElement(tableHeader, tempInfo)
 }
