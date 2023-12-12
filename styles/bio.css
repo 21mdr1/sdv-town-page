@@ -839,6 +839,9 @@ ul {
   height: 1rem;
   margin-right: 0.3rem;
 }
+.comment__like-button:active {
+  background-image: url("../assets/Icons/SVG/icon-like-lighter-filled.svg");
+}
 .comment__like-number {
   color: #AFAFAF;
 }
@@ -850,6 +853,9 @@ ul {
   border: none;
   width: 0.75rem;
   height: 1rem;
+}
+.comment__delete:active {
+  background-image: url("../assets/Icons/SVG/icon-delete-lighter-filled.svg");
 }
 
 .popup {
@@ -874,6 +880,11 @@ ul {
     width: 60%;
     padding: 1rem 2rem;
     height: 13rem;
+  }
+}
+@media (min-width: 1280px) {
+  .popup {
+    width: 50rem;
   }
 }
 .popup__background {
