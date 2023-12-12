@@ -31,6 +31,8 @@ function displayComment(commentInfo) {
 }
 
 function displayAllComments(commentInfo) {
+    const commentsContainer = document.querySelector(".comments__container");
+    commentsContainer.innerHTML = '';
     commentInfo.forEach((comment) => displayComment(comment))
 }
 
@@ -48,10 +50,10 @@ async function formSubmitHandler(event) {
             comment: event.target.comment.value,
     });
 
-    const commentsContainer = document.querySelector(".comments__container");
-    commentsContainer.innerHTML = '';
+    // const commentsContainer = document.querySelector(".comments__container");
+    // commentsContainer.innerHTML = '';
 
-    displayAllComments(await bandSiteApi.getComments())
+    displayAllComments(await bandSiteApi.getComments());
 
     event.target.reset();
 }
@@ -61,9 +63,9 @@ form.addEventListener('submit', formSubmitHandler);
 const likeButtons = document.querySelectorAll(".comment__like-button");
 
 async function likeHandler(event) {
-    console.log(event);
     const id = this.value;
-    console.log(id);
+    await bandSiteApi.likeComment(id);
+    displayAllComments(await bandSiteApi.getComments());
 }
 
 likeButtons.forEach((button) => {

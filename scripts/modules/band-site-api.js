@@ -6,7 +6,7 @@ class BandSiteApi {
 
     async postComment(comment) {
         try {
-            const url = this.baseUrl + 'comments?api_key=' + this.apiKey;
+            const url = `${this.baseUrl}comments?api_key=${this.apiKey}`;
             let response =  await axios.post(url, comment);
             return response;
         } catch (error) {
@@ -16,7 +16,7 @@ class BandSiteApi {
 
     async getComments() {
         try {
-            const url = this.baseUrl + 'comments?api_key=' + this.apiKey;
+            const url = `${this.baseUrl}comments?api_key=${this.apiKey}`;
             let response = await axios.get(url);
            let comments = response.data.sort((a, b) => b.timestamp - a.timestamp);
             return comments;
@@ -27,11 +27,21 @@ class BandSiteApi {
 
     async getShows() {
         try {
-            const url = this.baseUrl + 'showdates?api_key=' + this.apiKey;
+            const url = `${this.baseUrl}showdates?api_key=${this.apiKey}`;
             let response = await axios.get(url);
             return response.data;
         } catch (error) {
             console.log('There was an error loading shows', error);
+        }
+    }
+
+    async likeComment(id) {
+        try {
+            const url = `${this.baseUrl}comments/${id}/like?api_key=${this.apiKey}`;
+            let response = await axios.put(url);
+            return response;
+        } catch (error) {
+            console.log('There was an error liking comment', error);
         }
     }
 }
