@@ -1,5 +1,6 @@
 import bandSiteApi from "./band-site-api.js";
 import {newElement, createAndAppendElement} from "./create-element.js";
+import formatDate from "./dates.js";
 
 // Functions, etc.
 let tempInfo;
@@ -49,45 +50,45 @@ function createShow(showInfo) {
     return container;
 }
 
-function formatDate(date, format) {
-    let options;
+// function formatDate(date, format) {
+//     let options;
 
-    if (format === 'relative') {
-        let today = new Date();
-        let day = 1000 * 3600 * 24;
+//     if (format === 'relative') {
+//         let today = new Date();
+//         let day = 1000 * 3600 * 24;
 
-        let difference = (today - date) / day;
+//         let difference = (today - date) / day;
 
-        if (difference <= 1) {
-            return 'Today';
-        }
-        if (difference <= 7) {
-            return `${Math.round(difference)}d`;
-        }
-        format = 'MM/DD/YYYY';
+//         if (difference <= 1) {
+//             return 'Today';
+//         }
+//         if (difference <= 7) {
+//             return `${Math.round(difference)}d`;
+//         }
+//         format = 'MM/DD/YYYY';
 
-    }
+//     }
 
-    if (format === 'MM/DD/YYYY') {
-        options = {
-            day: '2-digit', 
-            month: '2-digit', 
-            year: 'numeric',
-        }
-    }
+//     if (format === 'MM/DD/YYYY') {
+//         options = {
+//             day: '2-digit', 
+//             month: '2-digit', 
+//             year: 'numeric',
+//         }
+//     }
 
-    if (format === 'Week Mon DD YYYY') {
-        options = {
-            weekday: "short",
-            month: "short",
-            day: "2-digit",
-            year: "numeric",
-        };
-    }
+//     if (format === 'Week Mon DD YYYY') {
+//         options = {
+//             weekday: "short",
+//             month: "short",
+//             day: "2-digit",
+//             year: "numeric",
+//         };
+//     }
 
-    const formatter = new Intl.DateTimeFormat('en-US', options);
-    return formatter.format(date).replace(/,/g, '');
-}
+//     const formatter = new Intl.DateTimeFormat('en-US', options);
+//     return formatter.format(date).replace(/,/g, '');
+// }
 
 // Shows
 const main = document.querySelector("main");

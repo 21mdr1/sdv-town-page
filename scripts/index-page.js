@@ -1,5 +1,6 @@
 import bandSiteApi from "./band-site-api.js";
 import {newElement, createAndAppendElement} from "./create-element.js";
+import formatDate from "./dates.js";
 
 
 // Functions
@@ -45,45 +46,45 @@ function displayAllComments(commentInfo) {
     commentInfo.toReversed().forEach((comment) => displayComment(comment))
 }
 
-function formatDate(date, format) {
-    let options;
+// function formatDate(date, format) {
+//     let options;
 
-    if (format === 'relative') {
-        let today = new Date();
-        let day = 1000 * 3600 * 24;
+//     if (format === 'relative') {
+//         let today = new Date();
+//         let day = 1000 * 3600 * 24;
 
-        let difference = (today - date) / day;
+//         let difference = (today - date) / day;
 
-        if (difference <= 1) {
-            return 'Today';
-        }
-        if (difference <= 7) {
-            return `${Math.round(difference)}d`;
-        }
-        format = 'MM/DD/YYYY';
+//         if (difference <= 1) {
+//             return 'Today';
+//         }
+//         if (difference <= 7) {
+//             return `${Math.round(difference)}d`;
+//         }
+//         format = 'MM/DD/YYYY';
 
-    }
+//     }
 
-    if (format === 'MM/DD/YYYY') {
-        options = {
-            day: '2-digit', 
-            month: '2-digit', 
-            year: 'numeric',
-        }
-    }
+//     if (format === 'MM/DD/YYYY') {
+//         options = {
+//             day: '2-digit', 
+//             month: '2-digit', 
+//             year: 'numeric',
+//         }
+//     }
 
-    if (format === 'Week Mon DD YYYY') {
-        options = {
-            weekday: "short",
-            month: "short",
-            day: "2-digit",
-            year: "numeric",
-        };
-    }
+//     if (format === 'Week Mon DD YYYY') {
+//         options = {
+//             weekday: "short",
+//             month: "short",
+//             day: "2-digit",
+//             year: "numeric",
+//         };
+//     }
 
-    const formatter = new Intl.DateTimeFormat('en-US', options);
-    return formatter.format(date).replace(/,/g, '');
-}
+//     const formatter = new Intl.DateTimeFormat('en-US', options);
+//     return formatter.format(date).replace(/,/g, '');
+// }
 
 
 // Initial generation
@@ -93,6 +94,7 @@ const commentInfo = [
     {name: "Emilie Beach", date: new Date(Date.parse("2021-01-09")), comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
     {name: "Connor Walton", date: new Date(Date.parse("2021-02-17")), comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."}
 ]
+
 displayAllComments(commentInfo)
 
 // Event Handlers and Listeners
