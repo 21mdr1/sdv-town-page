@@ -44,6 +44,16 @@ class BandSiteApi {
             console.log('There was an error liking comment', error);
         }
     }
+
+    async deleteComment(id) {
+        try {
+            const url = `${this.baseUrl}comments/${id}?api_key=${this.apiKey}`;
+            let response = await axios.delete(url);
+            return response;
+        } catch (error) {
+            console.log('There was an error deleting comment', error);
+        }
+    }
 }
 
 const bandSiteApi = new BandSiteApi("05721426-a0c4-4a8d-816a-150c03d61d85")

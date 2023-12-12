@@ -340,3 +340,76 @@
         height: 1rem;
     }
 }
+
+.popup {
+    background-color: $white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 80%;
+    height: 10rem;
+    padding: 1rem;
+    @include flex(center, center);
+    row-gap: 1rem;
+    flex-direction: column;
+
+    @include tablet {
+        width: 60%;
+        padding: 1rem 2rem;
+        height: 13rem;
+    }
+
+    &__background{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $bandsite-black-transparent;
+        @include flex(center, center);
+    }
+
+    &__text {
+        align-self: flex-start;
+    }
+
+    &__title {
+        color: $bandsite-black;
+        @include subheader-mobile;
+
+        @include tablet {
+            @include subheader-tablet;
+        }
+    }
+
+    &__subtitle {
+        color: $bandsite-black;
+        @include copy-mobile;
+
+        @include tablet {
+            @include copy-tablet;
+        }
+    }
+
+    &__button-container {
+        align-self: flex-end;
+    }
+
+    &__button {
+        &--cancel {
+            @include copy-mobile;
+            background-color: $white;
+            color: $bandsite-black;
+            border: none;
+
+            @include tablet {
+                @include copy-tablet;
+            }
+        }
+
+        &--confirm {
+            @include button;
+            width: 9.375rem;
+            margin-left: 1rem;
+        }
+    }
+}
