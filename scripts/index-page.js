@@ -1,17 +1,9 @@
 import bandSiteApi from "./band-site-api.js";
-import {newElement, createAndAppendElement} from "./create-element.js";
+import {createAndAppendElement} from "./create-element.js";
 import formatDate from "./dates.js";
 
 
 // Functions
-
-function createComment(name, timestamp, commentText, commentArray) {
-    commentArray.push({
-        name: name,
-        timestamp: timestamp,
-        comment: commentText,
-    })
-}
 
 function displayComment(commentInfo) {
     const date = formatDate(commentInfo.timestamp, 'relative');
@@ -35,22 +27,22 @@ function displayAllComments(commentInfo) {
 
 // Initial generation
 
-const commentInfo = await bandSiteApi.getComments();
-
-displayAllComments(commentInfo)
+displayAllComments(await bandSiteApi.getComments())
 
 // Event Handlers and Listeners
 const form = document.querySelector(".form");
-function formSubmitHandler(event) {
+async function formSubmitHandler(event) {
     event.preventDefault()
 
-    const timestamp = new Date()
-    createComment(event.target.name.value, timestamp, event.target.comment.value, commentInfo)
+    await bandSiteApi.postComment({
+            name: event.target.name.value,
+            comment: event.target.comment.value,
+    });
 
     const commentsContainer = document.querySelector(".comments__container");
     commentsContainer.innerHTML = '';
 
-    displayAllComments(commentInfo)
+    displayAllComments(await bandSiteApi.getComments())
 
     event.target.reset();
 }

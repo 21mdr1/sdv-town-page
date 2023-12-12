@@ -18,8 +18,8 @@ class BandSiteApi {
         try {
             const url = this.baseUrl + 'comments?api_key=' + this.apiKey;
             let response = await axios.get(url);
-            // sort array
-            return response.data;
+           let comments = response.data.sort((a, b) => b.timestamp - a.timestamp);
+            return comments;
         } catch (error) {
             console.log('There was an error loading comments', error);
         }
@@ -29,7 +29,6 @@ class BandSiteApi {
         try {
             const url = this.baseUrl + 'showdates?api_key=' + this.apiKey;
             let response = await axios.get(url);
-            // sort array?
             return response.data;
         } catch (error) {
             console.log('There was an error loading shows', error);
@@ -40,5 +39,3 @@ class BandSiteApi {
 const bandSiteApi = new BandSiteApi("05721426-a0c4-4a8d-816a-150c03d61d85")
 
 export default bandSiteApi;
-
-// remember to use await when calling async methods
