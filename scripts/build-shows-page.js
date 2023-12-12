@@ -5,19 +5,6 @@ import formatDate from "./dates.js";
 // Functions, etc.
 let tempInfo;
 
-// function createAndAppendElement(parent, elementInfo) {
-//     let element = newElement(elementInfo);
-//     parent.appendChild(element);
-//     return element
-// }
-
-// function newElement(elementInfo) {
-//     let element = document.createElement(elementInfo.tag);
-//     elementInfo.classes.forEach((classItem) => {element.classList.add(classItem)})
-//     element.textContent = elementInfo.content;
-//     return element;
-// }
-
 function appendShow(parent, showInfo) {
     let show = createShow(showInfo);
     parent.appendChild(show);
@@ -50,46 +37,6 @@ function createShow(showInfo) {
     return container;
 }
 
-// function formatDate(date, format) {
-//     let options;
-
-//     if (format === 'relative') {
-//         let today = new Date();
-//         let day = 1000 * 3600 * 24;
-
-//         let difference = (today - date) / day;
-
-//         if (difference <= 1) {
-//             return 'Today';
-//         }
-//         if (difference <= 7) {
-//             return `${Math.round(difference)}d`;
-//         }
-//         format = 'MM/DD/YYYY';
-
-//     }
-
-//     if (format === 'MM/DD/YYYY') {
-//         options = {
-//             day: '2-digit', 
-//             month: '2-digit', 
-//             year: 'numeric',
-//         }
-//     }
-
-//     if (format === 'Week Mon DD YYYY') {
-//         options = {
-//             weekday: "short",
-//             month: "short",
-//             day: "2-digit",
-//             year: "numeric",
-//         };
-//     }
-
-//     const formatter = new Intl.DateTimeFormat('en-US', options);
-//     return formatter.format(date).replace(/,/g, '');
-// }
-
 // Shows
 const main = document.querySelector("main");
 
@@ -106,15 +53,6 @@ for(let label of ["date", "venue", "location"]){
     tempInfo = {tag: "h4", classes: ['show__label', 'show__label--header'], content: label};
     createAndAppendElement(tableHeader, tempInfo)
 }
-
-// const shows = [
-//     {date: new Date(Date.parse('Mon Sept 06 2021')), venue: 'Ronald Lane', location: 'San Francisco, CA'},
-//     {date: new Date(Date.parse('Tue Sept 21 2021')), venue: 'Pier 3 East', location: 'San Francisco, CA'},
-//     {date: new Date(Date.parse('Tue Sept 21 2021')), venue: 'View Lounge', location: 'San Francisco, CA'},
-//     {date: new Date(Date.parse('Sat Nov 06 2021')), venue: 'Hyatt Agency', location: 'San Francisco, CA'},
-//     {date: new Date(Date.parse('Fri Nov 26 2021')), venue: 'Moscow Center', location: 'San Francisco, CA'},
-//     {date: new Date(Date.parse('Wed Dec 15 2021')), venue: 'Press Club', location: 'San Francisco, CA'}
-// ]
 
 const shows = await bandSiteApi.getShows();
 console.log(shows);
