@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/Font/Alternative files/AvenirNextLTPro.ttf") format("truetype");
+  src: url("../assets/font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/font/AvenirNextLTPro.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../assets/Font/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
+  src: url("../assets/font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../assets/font/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype"), url("../assets/Font/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
+  src: url("../assets/font/AvenirNextLTPro-Bold.otf") format("opentype"), url("../assets/font/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
 body {
@@ -339,7 +339,7 @@ ul {
 }
 
 .hero {
-  background-image: url("../assets/Images/hero-bio.jpg");
+  background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
   background-position: center;
   height: 57.5vw;
@@ -365,6 +365,7 @@ ul {
 }
 
 .about {
+  background-color: #FFFFFF;
   color: #323232;
   margin: 0 1rem;
 }
@@ -443,6 +444,7 @@ ul {
 }
 
 .bees-knees {
+  background-color: #FFFFFF;
   color: #323232;
   padding-bottom: 1rem;
   margin: 0 1rem;
@@ -576,6 +578,7 @@ ul {
 }
 
 .comments {
+  background-color: #FFFFFF;
   margin: 0 1rem;
 }
 @media (min-width: 768px) {
@@ -831,7 +834,7 @@ ul {
 }
 .comment__like-button {
   background-color: #FFFFFF;
-  background-image: url("../assets/Icons/SVG/icon-like-lighter.svg");
+  background-image: url("../assets/icons/icon-like-lighter.svg");
   background-size: cover;
   background-position: center;
   border: none;
@@ -840,14 +843,14 @@ ul {
   margin-right: 0.3rem;
 }
 .comment__like-button:active {
-  background-image: url("../assets/Icons/SVG/icon-like-lighter-filled.svg");
+  background-image: url("../assets/icons/icon-like-lighter-filled.svg");
 }
 .comment__like-number {
   color: #AFAFAF;
 }
 .comment__delete {
   background-color: #FFFFFF;
-  background-image: url("../assets/Icons/SVG/icon-delete-lighter.svg");
+  background-image: url("../assets/icons/icon-delete-lighter.svg");
   background-size: cover;
   background-position: center;
   border: none;
@@ -855,7 +858,7 @@ ul {
   height: 1rem;
 }
 .comment__delete:active {
-  background-image: url("../assets/Icons/SVG/icon-delete-lighter-filled.svg");
+  background-image: url("../assets/icons/icon-delete-lighter-filled.svg");
 }
 
 .popup {

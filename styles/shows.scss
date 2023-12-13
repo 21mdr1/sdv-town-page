@@ -5,7 +5,7 @@
 
 // Hero
 .hero {
-    @include background-image("../assets/Images/hero-shows.jpg");
+    @include background-image("../assets/images/hero-shows.jpg");
     
     height: 57.5vw;
     min-height: 17.4rem;
@@ -76,6 +76,7 @@
 }
 
 .main {
+    background-color: $white;
     @include desktop {
         width: $desktop-content-width;
         margin: auto;
