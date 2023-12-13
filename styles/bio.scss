@@ -313,13 +313,13 @@
 
     &__social {
         position: absolute;
-        bottom: 5px;
-        right: 30px;
+        bottom: 0.3125rem;
+        right: 1.875rem;
         @include flex(center, center, 1.5rem);
     }
 
     &__likes {
-        margin-top: 4px;
+        margin-top: 0.25rem;
     }
 
     &__like-button {

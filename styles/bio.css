@@ -819,8 +819,8 @@ ul {
 }
 .comment__social {
   position: absolute;
-  bottom: 5px;
-  right: 30px;
+  bottom: 0.3125rem;
+  right: 1.875rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -830,7 +830,7 @@ ul {
   flex-wrap: initial;
 }
 .comment__likes {
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
 .comment__like-button {
   background-color: #FFFFFF;
