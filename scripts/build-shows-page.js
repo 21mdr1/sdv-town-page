@@ -22,7 +22,9 @@ function createShow(showInfo) {
         let contentClasses = ["show__content"];
 
         tempInfo = {tag: "p", classes: contentClasses, content: showInfo[label]};
-
+        if(label === 'venue') {
+            tempInfo.content = showInfo.place;
+        }
         if(label === "date") {
             contentClasses.push("show__content--bold");
             tempInfo.content = formatDate(showInfo[label], 'Week Mon DD YYYY')
