@@ -1,0 +1,69 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+
+// Nav
+
+.nav {
+    background-color: $bandsite-black;
+
+    &__container {
+        @include margin;
+        margin: 0;
+
+        @include tablet {
+            @include flex(flex-start, center);
+        }
+    }
+    
+    &__logo {
+        display: block;
+        text-align: center;
+        padding: 0.7rem 0;
+
+        @include tablet {
+            padding: 0.3rem 3rem 0 0;
+        }
+    }
+
+    &__links {
+        @include flex(flex-start, center);
+    }
+
+    &__link {
+        @include subheader-mobile;
+        font-weight: 400;
+        color: $mercury;
+        text-align: center;
+        width: 50%;
+        padding-bottom: 0.5rem;
+
+        @include tablet {
+            margin: 1.5rem $tablet-in-padding 0 $tablet-in-padding;
+            padding-bottom: 1.3rem;
+            width: auto;
+        }
+
+        @include desktop {
+            padding: 0.5rem 0 1.8rem 0;
+        }
+
+        &:hover {
+            color: $white;
+            border-bottom: 2px solid $white;
+            
+            @include tablet {
+                border-bottom: 3px solid $white;
+            }
+        }
+
+        &--selected {
+            @extend :hover;
+            font-weight: 600; 
+        }
+    }
+
+    &__clickable:active {
+        font-weight: 600;
+    }
+}

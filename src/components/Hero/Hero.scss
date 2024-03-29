@@ -1,0 +1,23 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+
+// Hero
+
+.hero {
+
+    &__overlay {
+        background: $bandsite-black-transparent;
+        height: 100%;
+        @include flex(flex-start, center);
+    }
+
+    &__title {
+        @include header-mobile;
+        color: $white;
+
+        @include tablet {
+            @include page-header-tablet;
+        }
+    }
+}
