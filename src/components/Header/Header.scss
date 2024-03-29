@@ -57,7 +57,7 @@
             }
         }
 
-        &--selected {
+        &:has(.active) {
             @extend :hover;
             font-weight: 600; 
         }

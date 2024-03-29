@@ -1,3 +1,4 @@
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/logo-bandsite.svg';
 import './Header.scss';
 
@@ -6,12 +7,20 @@ function Header() {
         <header className="header">
             <nav className="nav">
                 <div className="nav__container">
-                    <a className="nav__logo" href="index.html">
+                    <Link to='/' className='nav__logo'>
                         <img src={logo} alt="bandsite logo"/>
-                    </a>
-                    <ul className="nav__links">
-                        <li className="nav__link nav__link--selected"><a className="nav__clickable" href="index.html">Biography</a></li>
-                        <li className="nav__link"><a className="nav__clickable" href="./pages/shows.html">Shows</a></li>
+                    </Link>
+                    <ul className="nav__links" >
+                        <li className="nav__link">
+                            <NavLink to='/' className="nav__clickable">
+                                Biography
+                            </NavLink>
+                        </li>
+                        <li className="nav__link">
+                            <NavLink to='/festivals' className="nav__clickable">
+                                Shows
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </nav>
