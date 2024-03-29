@@ -1,10 +1,16 @@
+import BulletinBoard from '../../components/BulletinBoard/BulletinBoard';
 import Hero from '../../components/Hero/Hero';
 import './Main.scss';
 
 function Main() {
-    return (<>
+    return (
+        <>
         <Hero />
-    </>);
+        <main>
+            <BulletinBoard />
+        </main>
+        </>
+    );
 }
 
 export default Main;
