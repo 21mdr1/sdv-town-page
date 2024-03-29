@@ -1,0 +1,45 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+
+// Gallery
+.gallery {
+    background-color: $alabaster;
+
+    &__title {
+        color: $bandsite-black;
+        @include header-mobile;
+        padding-top: $mobile-headline-padding;
+        @include margin;
+
+        @include tablet {
+            @include section-header-tablet;
+            padding-top: $tablet-headline-padding;
+        }
+    }
+
+    &__image-container {
+        @include flex(space-between, center, $tablet-in-padding, $mobile-padding, wrap);
+        padding: $mobile-padding 0;
+        @include margin;
+
+        @include tablet {
+            row-gap: $tablet-in-padding;
+            padding: $tablet-in-padding 0 $tablet-out-padding 0;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        filter: grayscale(100%);
+        
+        &:hover {
+            filter: none;
+        }
+
+        @include tablet {
+            width: calc((100% - 2*$tablet-in-padding)/3);
+        }
+    }
+
+}

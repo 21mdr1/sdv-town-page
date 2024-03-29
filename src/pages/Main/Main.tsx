@@ -1,5 +1,6 @@
 import BulletinBoard from '../../components/BulletinBoard/BulletinBoard';
 import Hero from '../../components/Hero/Hero';
+import PhotoGallery from '../../components/PhotoGallery/PhotoGallery';
 import './Main.scss';
 
 function Main() {
@@ -8,6 +9,7 @@ function Main() {
         <Hero />
         <main>
             <BulletinBoard />
+            <PhotoGallery />
         </main>
         </>
     );
