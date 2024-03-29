@@ -7,7 +7,7 @@ import festivalsHighlighted from '../../assets/links/festivals-highlighted.png';
 import './Header.scss';
 
 function Header() {
-    let { pathname } = useLocation();
+    const { pathname } = useLocation();
 
     return (
         <header className="header">
