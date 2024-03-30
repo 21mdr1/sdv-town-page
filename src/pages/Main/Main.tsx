@@ -1,6 +1,7 @@
-import BulletinBoard from '../../components/BulletinBoard/BulletinBoard';
 import Hero from '../../components/Hero/Hero';
+import BulletinBoard from '../../components/BulletinBoard/BulletinBoard';
 import PhotoGallery from '../../components/PhotoGallery/PhotoGallery';
+import FromTheTown from '../../components/FromTheTown/FromTheTown';
 import './Main.scss';
 
 function Main() {
@@ -10,6 +11,7 @@ function Main() {
         <main>
             <BulletinBoard />
             <PhotoGallery />
+            <FromTheTown />
         </main>
         </>
     );
