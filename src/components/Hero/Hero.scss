@@ -4,7 +4,7 @@
 
 // Hero
 .hero {
-    // @include background-image("../../assets/images/hero-bio.jpg");
+    @include background-image;
     height: 57.5vw;
 
     @include desktop {
