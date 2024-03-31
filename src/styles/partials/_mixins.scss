@@ -6,6 +6,19 @@
     background-position: center;
 }
 
+@mixin header {
+    font-family: 'Stardew Valley Header';
+    font-size: 1.75rem;
+    font-weight: 400;
+
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    padding-left: 1.2rem;
+
+    color: #611A0D;
+    text-shadow: #CE9C5F -1px 1px 0;
+}
+
 @mixin flex($justify-content: initial, $align-items: initial, $column-gap: initial, $row-gap: initial, $flex-wrap: initial) {
     display: flex;
     justify-content: $justify-content;

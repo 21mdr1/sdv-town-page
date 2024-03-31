@@ -10,6 +10,7 @@
     @include margin;
 
     &__title {
+        @include header;
         padding-top: $mobile-headline-padding;
 
         @include tablet {

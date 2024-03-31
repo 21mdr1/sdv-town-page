@@ -12,19 +12,25 @@
 }
 
 .shows {
-
     &__title {
-        @include header-mobile;
-        padding: 2.1rem $mobile-padding 0.3rem;
+        @include header;
+        min-width: 11.8125rem;
+        min-height: 2.17rem;
+        margin: 2.1rem $mobile-padding 0.3rem;
 
         @include tablet {
-            @include section-header-tablet;
-            padding: $tablet-headline-padding $tablet-out-padding $tablet-out-padding;
+            margin: $tablet-headline-padding $tablet-out-padding $tablet-out-padding;
         }
 
         @include desktop {
-            padding-left: 0;
-            pading-right: 0;
+            margin-left: 0;
+            margin-right: 0;
         }
+    }
+
+    &__image {
+        height: 1.5rem;
+        margin-left: 1rem;
+        margin-bottom: -0.35rem;
     }
 }

@@ -6,19 +6,6 @@
     background-color: $white;
     @include margin;
 
-    &__title {
-        @include header-mobile;
-        color: $bandsite-black;
-        padding-top: 0.8rem;
-        padding-bottom: 0.5rem;
-
-        @include tablet {
-            @include section-header-tablet;
-            padding-top: $tablet-headline-padding;
-            padding-bottom: 2rem;
-        }
-    }
-
     &__container {
         padding-bottom: $mobile-padding;
 

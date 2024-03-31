@@ -7,13 +7,11 @@
     background-color: $alabaster;
 
     &__title {
-        color: $bandsite-black;
-        @include header-mobile;
-        padding-top: $mobile-headline-padding;
         @include margin;
+        @include header;
+        padding-top: $mobile-headline-padding;
 
         @include tablet {
-            @include section-header-tablet;
             padding-top: $tablet-headline-padding;
         }
     }

@@ -1,4 +1,4 @@
-import title from '../../assets/headers/bulletin-board.png';
+import scroll from '../../assets/backgrounds/scroll-background.png';
 import bulletinBoard from '../../assets/images/bulletin-board.png';
 import calendarSpring from '../../assets/images/Calendar_Spring.png';
 import './BulletinBoard.scss';
@@ -7,8 +7,8 @@ function BulletinBoard() {
     return (
         <>
         <section className="about">
-            <h2 className="about__title">
-                <img src={title} alt='Bulletin Board' />
+            <h2 className="about__title" style={{backgroundImage: `url(${scroll})`}}>
+                Bulletin Board
             </h2>
             <div className="about__container">
                 <img src={bulletinBoard} alt="bulletin board background" className="about__image" />
