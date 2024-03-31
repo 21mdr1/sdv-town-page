@@ -6,14 +6,11 @@ import './Main.scss';
 
 function Main() {
     return (
-        <>
-        <Hero />
-        <main>
+        <main className="main">
             <BulletinBoard />
             <PhotoGallery />
             <FromTheTown />
         </main>
-        </>
     );
 }
 
