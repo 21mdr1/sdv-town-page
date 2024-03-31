@@ -61,6 +61,7 @@ function FestivalsTable() {
             </div>
             {festivals.map(festival => 
                 <FestivalItem 
+                    key={festival.name}
                     date={festival.date}
                     name={festival.name}
                     location={festival.location}
