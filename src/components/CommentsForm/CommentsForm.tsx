@@ -3,7 +3,7 @@ import './CommentsForm.scss';
 function CommentForm() {
     return (
         <form className="form">
-            <img className="form__img" src="./assets/images/mohan-muruge.jpg" alt="user photo" />
+            <img className="form__img" src="./assets/images/mohan-muruge.jpg" alt="user avatar" />
             <fieldset className="form__container">
                 <label htmlFor="form__name" className="form__label">name</label>
                 <input 

@@ -1,3 +1,4 @@
+import svLogo from '../../assets/logo/sv_logo.png';
 import './Footer.scss';
 
 function Footer() {
@@ -12,7 +13,7 @@ function Footer() {
                      <a href="https://x.com"><img src="./assets/icons/icon-twitter.svg" alt="twitter" className="footer__image" /></a>
                </div>
             </div>
-            <img className="footer__logo footer__logo--top" src="./assets/logo/logo-bandsite.svg" alt="bandsite logo" />
+            <img className="footer__logo footer__logo--top" src={svLogo} alt="stardew valley logo" />
          </div>
 
          <div className="footer__middle">
@@ -54,7 +55,7 @@ function Footer() {
          </div>
          
          <div className="footer__bottom">
-            <img className="footer__logo footer__logo--bottom" src="./assets/logo/logo-bandsite.svg" alt="bandsite logo" />
+            <img className="footer__logo footer__logo--bottom" src={svLogo} alt="stardew valley logo" />
             <p className="footer__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>
          </div>
       </footer>

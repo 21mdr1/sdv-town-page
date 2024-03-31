@@ -1,0 +1,129 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+
+// Footer
+
+.footer {
+    background-color: $sv-darkgreen;
+    color: $white;
+    padding: $mobile-headline-padding 0 $mobile-padding;
+
+    @include tablet {
+        padding: $tablet-headline-padding 0 $tablet-out-padding;
+    }
+
+    &__top {
+        @include margin;
+
+        @include tablet {
+            @include flex(space-between, center);
+            padding-bottom: $tablet-out-padding;
+        }
+    }
+
+    &__top-left {
+        @include tablet {
+            @include flex(flex-start, center, 2rem);
+        }
+    }
+
+    &__middle {
+        @include margin;
+
+        @include tablet {
+            @include flex(flex-start, center, calc(2*$tablet-in-padding));
+        }
+    }
+
+    &__bottom {
+        @include margin;
+    }
+
+    &__title {
+        @include header-mobile;
+
+        @include tablet {
+            @include section-header-tablet;
+        }
+    }
+
+    &__socials-container {
+        @include flex(flex-start, flex-end, 2rem);
+        padding: $mobile-padding 0;
+
+        @include tablet {
+            padding-top: 0;
+            padding-bottom: 0.4rem;
+        }
+    }
+
+    &__image {
+        @include tablet {
+            height: 1.5rem;
+        }
+    }
+
+    &__logo {
+        padding-top: 2rem;
+        width: 7.5rem;
+
+        &--top {
+            display: none;
+
+            @include tablet {
+                display: block;
+                padding-top: 0.4rem;
+            }
+        }
+
+        &--bottom {
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    &__copyright {
+        padding-top: 0.75rem;
+        @include label-mobile;
+        font-weight: 400;
+
+        @include tablet {
+            @include copy-tablet;
+            padding-top: $tablet-in-padding;
+        }
+    }
+}
+
+.contact {
+    padding-bottom: $mobile-headline-padding;
+
+    &__title {
+        @include subheader-mobile;
+
+        @include tablet {
+            @include copy-tablet;
+            font-weight: 600;
+        }
+    }
+
+    &__location {
+        @include copy-mobile;
+        padding: $mobile-padding 0;
+
+        @include tablet {
+            @include copy-tablet;
+            padding: $tablet-in-padding 0;
+        }
+    }
+
+    &__email {
+        @include copy-mobile;
+        color: $white;
+
+        @include tablet {
+            @include copy-tablet;
+        }
+    }
+}   
