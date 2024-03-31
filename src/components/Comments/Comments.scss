@@ -1,0 +1,35 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+
+.comments {
+    background-color: $white;
+    @include margin;
+
+    &__title {
+        @include header-mobile;
+        color: $bandsite-black;
+        padding-top: 0.8rem;
+        padding-bottom: 0.5rem;
+
+        @include tablet {
+            @include section-header-tablet;
+            padding-top: $tablet-headline-padding;
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__container {
+        padding-bottom: $mobile-padding;
+
+        @include tablet {
+            padding: 0 3.75rem;
+            padding-bottom: $tablet-out-padding;
+        }
+
+        @include desktop {
+            padding-right: 16.1rem;
+            padding-left: 16.1rem;
+        }
+    }
+}
