@@ -1,0 +1,30 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+
+.main {
+    background-color: $white;
+    @include desktop {
+        width: $desktop-content-width;
+        margin: auto;
+        @include flex(flex-start, flex-start, 4.7rem);
+    }
+}
+
+.shows {
+
+    &__title {
+        @include header-mobile;
+        padding: 2.1rem $mobile-padding 0.3rem;
+
+        @include tablet {
+            @include section-header-tablet;
+            padding: $tablet-headline-padding $tablet-out-padding $tablet-out-padding;
+        }
+
+        @include desktop {
+            padding-left: 0;
+            pading-right: 0;
+        }
+    }
+}

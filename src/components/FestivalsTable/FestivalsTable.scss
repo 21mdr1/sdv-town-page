@@ -1,0 +1,27 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+
+.shows {
+    &__container {
+        padding-bottom: $mobile-padding;
+
+        @include tablet {
+            padding: 0 1.125rem;
+            padding-bottom: $tablet-out-padding;
+        }
+
+        @include desktop {
+            flex-grow: 1;
+            padding-right: 0;
+            padding-left: 1.125rem;
+            padding-top: $tablet-headline-padding;
+        }
+    }
+
+    &__header {
+        @include flex(flex-start, center);
+        padding: 0 1.125rem;
+        padding-right: 10.5rem;
+    }
+}

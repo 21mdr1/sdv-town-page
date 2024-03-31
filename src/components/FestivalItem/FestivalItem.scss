@@ -1,0 +1,81 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+
+.show {
+    border-bottom: 2px solid $mercury;
+    padding: $mobile-padding;
+    padding-bottom: 0.9rem;
+
+    @include tablet {
+        padding: 0.9rem 1.125rem;
+
+        @include flex(space-between, center);
+
+        &:hover {
+            background-color: $alabaster;
+        }
+
+        &--selected, &--selected:hover {
+            background-color: $silver;
+        }
+    }
+
+
+    &__label {
+        @include label-mobile;
+        color: $silver;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding-bottom: 0.3212rem;
+
+        @include tablet {
+            display: none;
+            padding-bottom: 0;
+        }
+
+        @include desktop {
+            @include label-tablet;
+        }
+
+        &--header {
+            display: none;
+
+            @include tablet {
+                display: block;
+                padding-bottom: 0.2rem;
+                flex: 1 0 0;
+            }
+
+            @include desktop {
+                padding-bottom: $tablet-out-padding;
+            }
+        }
+    }
+
+    &__content {
+        @include copy-mobile;
+        letter-spacing: 0.3px;
+        color: $bandsite-black;
+        padding-bottom: 0.4rem;
+
+        &--bold {
+            font-weight: 600;
+        }
+
+        @include tablet {
+            padding-bottom: 0;
+            padding-top: 0.1rem;
+            flex: 1 0 0;
+        }
+    }
+
+    &__button {
+        margin-top: 0.819rem;        
+        @include button;
+
+        @include tablet {
+            margin-top: 0;
+        }
+    }
+}
