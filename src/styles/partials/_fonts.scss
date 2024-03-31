@@ -22,6 +22,21 @@
     font-weight: 700;
 }
 
+@font-face {
+    font-family: 'Stardew Valley Header';
+    src: 
+        url("../../assets/font/Stardew_Valley_Header.otf") format("opentype"),
+        url("../../assets/font/Stardew_Valley_Header.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Stardew Valley Text';
+    src: 
+        url("../../assets/font/stardew-valley-text.ttf") format("truetype");
+    font-weight: 400;
+}
+
 @mixin typography ($weight, $size, $height) {
     font-weight: $weight;
     font-size: $size;

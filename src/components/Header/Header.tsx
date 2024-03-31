@@ -1,14 +1,9 @@
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import svLogo from '../../assets/logo/sv_logo.png';
-import mainNormal from '../../assets/links/main-normal.png'
-import mainHighlighted from '../../assets/links/main-highlighted.png'
-import festivalsNormal from '../../assets/links/festivals-normal.png';
-import festivalsHighlighted from '../../assets/links/festivals-highlighted.png';
+import linkBackground from '../../assets/backgrounds/link-background.png';
 import './Header.scss';
 
 function Header() {
-    const { pathname } = useLocation();
-
     return (
         <header className="header">
             <nav className="nav">
@@ -22,21 +17,23 @@ function Header() {
                     </Link>
                     <ul className="nav__links" >
                         <li className="nav__link">
-                            <NavLink to='/' className="nav__clickable">
-                                <img 
-                                    className='nav__link-img'  
-                                    src={pathname === '/' ? mainHighlighted : mainNormal} 
-                                    alt="Main"
-                                />
+                            <NavLink to='/' 
+                                style={
+                                    {background: `url(${linkBackground})`}
+                                } 
+                                className="nav__clickable"
+                            >
+                                Main
                             </NavLink>
                         </li>
                         <li className="nav__link">
-                            <NavLink to='/festivals' className="nav__clickable">
-                                <img 
-                                    className='nav__link-img'
-                                    src={pathname === "/festivals" ? festivalsHighlighted : festivalsNormal} 
-                                    alt="Festivals"
-                                />
+                            <NavLink to='/festivals' 
+                                style={
+                                    {background: `url(${linkBackground})`}
+                                }
+                                className="nav__clickable"
+                            >
+                                Festival
                             </NavLink>
                         </li>
                     </ul>

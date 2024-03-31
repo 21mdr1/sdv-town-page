@@ -34,11 +34,22 @@
         @include flex(flex-start, center);
     }
 
-    &__link-img {
+    &__clickable {
         display: block;
+        height: 2.43rem;
+        width: 6.5625rem;
+        @include flex(center, center);
+
+        &.active, &:hover, &:active {
+            text-shadow: #934848 -1px 1px 0;
+        }
     }
 
     &__link {
+        font-family: 'Stardew Valley Header';
+        font-size: 1.75rem;
+        color: #CE5252;
+
         width: 50%;
         padding-bottom: 0.5rem;
         @include flex(center, center);
