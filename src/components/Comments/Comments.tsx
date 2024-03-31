@@ -27,6 +27,7 @@ function Comments() {
             {
                 comments.map(comment => 
                     <Comment 
+                        key={comment.id}
                         name={comment.name} 
                         timestamp={comment.timestamp} 
                         comment={comment.comment} 
