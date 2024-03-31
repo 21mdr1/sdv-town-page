@@ -3,41 +3,62 @@
 @use '../../styles/partials/fonts' as *;
 
 .comment {
-    box-sizing: border-box;
-    min-height: 9rem;
-    color: $bandsite-black;
-    @include copy-mobile;
-    border-bottom: 2px solid $mercury;
-    padding: $mobile-padding 0 0.75rem 0;
-    @include flex(flex-start, flex-start, $mobile-padding);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    aspect-ratio: 2.84 / 1;
     position: relative;
 
-    @include tablet {
-        padding: 1.75rem 0;
-        line-height: 1.35rem;
-        letter-spacing: 0.4px;
+    &__text {
+        position: absolute;
+        width: 55%;
+        left: 4%;
+        top: 8%;
+        font-family: 'Stardew Valley Header';
+        color: #56160C;
+        text-shadow: #E09650 1px 1px 0;
+
+        font-size: 1.2rem;
+
+        @include tablet {
+            font-size: 1.5rem;
+        }
+
+        @include desktop {
+            font-size: 1.2rem;
+        }
     }
 
     &__img {
-        @include avatar;
-        background-color: $mercury;
-        flex-shrink: 0;
-    }
-
-    &__container {
-        flex-grow: 1;
-    }
-
-    &__header {
-        @include flex(space-between);
-        padding-bottom: 0.5rem;
+        position: absolute;
+        width: 20%;
+        top: 12.5%;
+        right: 11%;
     }
 
     &__name {
-        font-weight: 600;
+        position: absolute;
+        transform: translateX(-50%);
+        bottom: 11%;
+        left: 79.5%;
+        font-family: 'Stardew Valley Header';
+        color: #56160C;
+        text-shadow: #E09650 -1px 1px 0;
+
+        font-size: 1.6rem;
+
+        @include tablet {
+            font-size: 2rem;
+        }
+
+        @include desktop {
+            font-size: 1.6rem;
+        }
+        
     }
 
     &__date {
+        font-family: 'Stardew Valley Header';
         color: $silver;
     }
 }

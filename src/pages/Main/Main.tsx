@@ -6,7 +6,7 @@ import './Main.scss';
 
 function Main() {
     return (
-        <main className="main">
+        <main>
             <BulletinBoard />
             <PhotoGallery />
             <FromTheTown />

@@ -1,20 +1,17 @@
+import commentBackground from '../../assets/backgrounds/comment.png';
 import './Comment.scss';
 
-function Comment({ name, timestamp, comment}: {
+function Comment({ name, timestamp, comment, image }: {
     name: string;
     timestamp: string;
     comment: string;
+    image: string;
 }) {
     return (
-        <article className="comment">
-            <div className="comment__img"></div>
-            <div className="comment__container">
-                <div className="comment__header">
-                    <p className="comment__name">{name}</p>
-                    <p className="comment__date">{timestamp}</p>
-                </div>
-                <p className="comment_text">{comment}</p>
-            </div>
+        <article className="comment" style={{backgroundImage: `url(${commentBackground})`}}>
+            <p className="comment__text">{comment}</p>
+            <img className="comment__img" src={image} alt="avatar"/>
+            <p className="comment__name">{name}</p>
         </article>
     );
 }
