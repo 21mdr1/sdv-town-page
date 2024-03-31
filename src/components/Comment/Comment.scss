@@ -40,44 +40,4 @@
     &__date {
         color: $silver;
     }
-
-    &__social {
-        position: absolute;
-        bottom: 0.3125rem;
-        right: 1.875rem;
-        @include flex(center, center, 1.5rem);
-    }
-
-    &__likes {
-        margin-top: 0.25rem;
-    }
-
-    &__like-button {
-        background-color: $white;
-        // @include background-image("../assets/icons/icon-like-lighter.svg");
-        border: none;
-        width: 1rem;
-        height: 1rem;
-        margin-right: 0.3rem;
-
-        &:active {
-            // background-image: url("../assets/icons/icon-like-lighter-filled.svg");
-        }
-    }
-
-    &__like-number {
-        color: $silver;
-    }
-
-    &__delete {
-        background-color: $white;
-        // @include background-image("../assets/icons/icon-delete-lighter.svg");
-        border: none;
-        width: 0.75rem;
-        height: 1rem;
-
-        &:active {
-            // background-image: url("../assets/icons/icon-delete-lighter-filled.svg");
-        }
-    }
 }
