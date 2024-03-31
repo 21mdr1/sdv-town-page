@@ -10,8 +10,10 @@ function BulletinBoard() {
             <h2 className="about__title">
                 <img src={title} alt='Bulletin Board' />
             </h2>
-            <img src={bulletinBoard} alt="bulletin board background" className="about__image" />
-            <img src={calendarSpring} alt="calendar" className="about__image" />
+            <div className="about__container">
+                <img src={bulletinBoard} alt="bulletin board background" className="about__image" />
+                <img src={calendarSpring} alt="calendar" className="about__image about__image--calendar" />
+            </div>
             <p className="about__quote">
                 "We push each other to be the best. It's not uncommon for one of us to say 'this needs to be better, back to the drawing board'"
             </p>

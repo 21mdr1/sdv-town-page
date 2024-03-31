@@ -17,6 +17,10 @@
         }
     }
 
+    &__container {
+        position: relative;
+    }
+
     &__image {
         box-sizing: border-box;
         width: 100%;
@@ -24,6 +28,13 @@
 
         @include tablet {
             padding: $tablet-in-padding 3.75rem;
+        }
+
+        &--calendar {
+            width: 72.5%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            inset: 50%;
         }
     }
 
