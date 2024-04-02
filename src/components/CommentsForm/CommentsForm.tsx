@@ -1,6 +1,6 @@
 import formBackground from '../../assets/backgrounds/form.png';
 import avatar from '../../assets/avatars/user.png';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './CommentsForm.scss';
 
 function CommentForm() {
@@ -14,8 +14,12 @@ function CommentForm() {
         setInputs(prev => ({ ...prev, [name]: value}))
     }
 
+    function handleFormSubmit(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+    }
+
     return (
-        <form className="form">
+        <form className="form" onSubmit={handleFormSubmit}>
             <div className="form__container" style={{backgroundImage: `url(${formBackground}`}}>
                 <img className="form__img" src={avatar} alt="user avatar" />
                 <input 
