@@ -80,10 +80,19 @@
     }
 
     &__button {
-        @include button;
+        font-family: 'Stardew Valley Text';
+        color: white;
+        font-size: 2rem;
+        border: none;
+        padding: 0.3rem 0.7rem;
+        font-weight: 700;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        cursor: pointer;
 
-        @include tablet {
-            align-self: flex-end;
+        &:hover {
+            text-shadow: #666666 -2px 2px 0;
         }
     }
 }

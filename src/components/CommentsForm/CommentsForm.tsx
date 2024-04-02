@@ -1,4 +1,5 @@
 import formBackground from '../../assets/backgrounds/form.png';
+import buttonBackground from '../../assets/backgrounds/button.png';
 import avatar from '../../assets/avatars/user.png';
 import { useState } from 'react';
 import './CommentsForm.scss';
@@ -40,7 +41,7 @@ function CommentForm() {
                     placeholder="Add a new comment" 
                 ></textarea>
             </div>
-            <button className="form__button" type="submit">comment</button>
+            <button className="form__button" type="submit" style={{backgroundImage: `url(${buttonBackground})`}}>Comment</button>
         </form>
     );
 }
