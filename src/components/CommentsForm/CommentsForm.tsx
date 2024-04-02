@@ -7,7 +7,6 @@ function CommentForm() {
         <form className="form">
             <div className="form__container" style={{backgroundImage: `url(${formBackground}`}}>
                 <img className="form__img" src={avatar} alt="user avatar" />
-                <label htmlFor="form__name" className="form__label">name</label>
                 <input 
                     className="form__input" 
                     id="form__name" 
@@ -15,7 +14,6 @@ function CommentForm() {
                     name="name" 
                     placeholder="Enter your name"  
                 />
-                <label htmlFor="from__comment" className="form__label">comment</label>
                 <textarea 
                     className="form__textarea" 
                     id="from__comment" 
