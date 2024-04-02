@@ -1,8 +1,19 @@
 import formBackground from '../../assets/backgrounds/form.png';
 import avatar from '../../assets/avatars/user.png';
+import { useEffect, useState } from 'react';
 import './CommentsForm.scss';
 
 function CommentForm() {
+    const [ inputs, setInputs ] = useState({name: '', comment: ''});
+    const { name, comment } = inputs;
+
+    type inputElement = HTMLInputElement | HTMLTextAreaElement;
+
+    function handleInputChange(event: React.ChangeEvent<inputElement>) {
+        const { name, value } = event.target;
+        setInputs(prev => ({ ...prev, [name]: value}))
+    }
+
     return (
         <form className="form">
             <div className="form__container" style={{backgroundImage: `url(${formBackground}`}}>
@@ -11,13 +22,17 @@ function CommentForm() {
                     className="form__input" 
                     id="form__name" 
                     type="text" 
-                    name="name" 
+                    name="name"
+                    value={name}
+                    onChange={handleInputChange}
                     placeholder="Enter your name"  
                 />
                 <textarea 
                     className="form__textarea" 
                     id="from__comment" 
                     name="comment" 
+                    value={comment}
+                    onChange={handleInputChange}
                     placeholder="Add a new comment" 
                 ></textarea>
             </div>
