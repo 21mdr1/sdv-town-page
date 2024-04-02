@@ -28,18 +28,6 @@
         left: 11%;
     }
 
-    &__label {
-        @include label-mobile;
-        text-transform: uppercase;
-        color: $silver;
-
-        @include tablet {
-            @include label-tablet;
-            font-weight: 400;
-            letter-spacing: 0.3px;
-        }
-    }
-
     &__input {
         position: absolute;
         background: transparent;
