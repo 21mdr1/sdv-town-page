@@ -1,10 +1,13 @@
 import formBackground from '../../assets/backgrounds/form.png';
 import buttonBackground from '../../assets/backgrounds/button.png';
 import avatar from '../../assets/avatars/user.png';
+import { saveComment } from '../../utils/storageUtils';
 import { useState } from 'react';
 import './CommentsForm.scss';
 
-function CommentForm() {
+function CommentForm({ getData }: {
+    getData(): Promise<void>
+}) {
     const [ inputs, setInputs ] = useState({name: '', comment: ''});
     const { name, comment } = inputs;
 
@@ -15,8 +18,11 @@ function CommentForm() {
         setInputs(prev => ({ ...prev, [name]: value}))
     }
 
-    function handleFormSubmit(event: React.FormEvent<HTMLFormElement>) {
+    async function handleFormSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
+        saveComment({name: name, comment: comment});
+        await getData();
+        setInputs({name: '', comment: ''});
     }
 
     return (
